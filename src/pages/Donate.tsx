@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import { Heart, CheckCircle2, Shield, Users, GraduationCap, Stethoscope, Shirt, UtensilsCrossed, Sofa, BookOpen, ArrowRight } from 'lucide-react';
 
+interface DonateProps {
+  onNavigate: (page: string) => void;
+}
+
 const itemCategories = [
   { icon: GraduationCap, label: 'School Supplies', desc: 'Books, uniforms, stationery, and bags' },
   { icon: Shirt, label: 'Clothing & Blankets', desc: 'New or gently used clothes and bedding' },
@@ -12,7 +16,7 @@ const itemCategories = [
 
 const deliveryOptions = ['I will drop it off', 'Please arrange a pickup'];
 
-export default function Donate() {
+export default function Donate({ onNavigate }: DonateProps) {
   const [category, setCategory] = useState(itemCategories[0].label);
   const [donorInfo, setDonorInfo] = useState({ name: '', email: '', phone: '' });
   const [itemDetails, setItemDetails] = useState({ description: '', quantity: '' });
@@ -79,9 +83,18 @@ export default function Donate() {
             </div>
 
             {submitted && (
-              <div className="bg-green-50 border border-green-200 text-green-700 rounded-lg p-4 mb-6 flex items-center gap-2 animate-fade-in">
-                <CheckCircle2 size={20} />
-                Thank you for your generous donation! Our team will contact you shortly to confirm the details.
+              <div className="bg-green-50 border border-green-200 text-green-700 rounded-lg p-4 mb-6 flex flex-wrap items-center justify-between gap-3 animate-fade-in">
+                <span className="flex items-center gap-2">
+                  <CheckCircle2 size={20} />
+                  Thank you for your generous donation! Our team will contact you shortly to confirm the details.
+                </span>
+                <button
+                  type="button"
+                  onClick={() => onNavigate('events')}
+                  className="text-sm font-semibold text-srk-green hover:underline"
+                >
+                  See Where It Helps
+                </button>
               </div>
             )}
 

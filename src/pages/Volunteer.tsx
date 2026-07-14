@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import { Heart, Users, GraduationCap, Stethoscope, Home as HomeIcon, CheckCircle2, ArrowRight } from 'lucide-react';
 
+interface VolunteerProps {
+  onNavigate: (page: string) => void;
+}
+
 const opportunities = [
   { icon: GraduationCap, title: 'Education Volunteer', desc: 'Teach, tutor, or mentor children in our education programs.', spots: 'Ongoing' },
   { icon: Stethoscope, title: 'Medical Camp Volunteer', desc: 'Support doctors and staff at our free medical camps.', spots: 'Monthly' },
@@ -8,7 +12,7 @@ const opportunities = [
   { icon: Users, title: 'Event Coordinator', desc: 'Plan and coordinate our fundraising and awareness events.', spots: 'Flexible' },
 ];
 
-export default function Volunteer() {
+export default function Volunteer({ onNavigate }: VolunteerProps) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -102,9 +106,18 @@ export default function Volunteer() {
               <p className="text-gray-500 text-sm mt-2">Fill out the form below and we'll get in touch with you.</p>
             </div>
             {submitted && (
-              <div className="bg-green-50 border border-green-200 text-green-700 rounded-lg p-4 mb-6 flex items-center gap-2 animate-fade-in">
-                <CheckCircle2 size={20} />
-                Thank you for your interest! We'll contact you soon.
+              <div className="bg-green-50 border border-green-200 text-green-700 rounded-lg p-4 mb-6 flex flex-wrap items-center justify-between gap-3 animate-fade-in">
+                <span className="flex items-center gap-2">
+                  <CheckCircle2 size={20} />
+                  Thank you for your interest! We'll contact you soon.
+                </span>
+                <button
+                  type="button"
+                  onClick={() => onNavigate('programs')}
+                  className="text-sm font-semibold text-srk-green hover:underline"
+                >
+                  Explore Our Programs
+                </button>
               </div>
             )}
             <form onSubmit={handleSubmit} className="space-y-5">
