@@ -1,10 +1,6 @@
 import { useState } from 'react';
 import { Heart, Users, GraduationCap, Stethoscope, Home as HomeIcon, CheckCircle2, ArrowRight } from 'lucide-react';
 
-interface VolunteerProps {
-  onNavigate: (page: string) => void;
-}
-
 const opportunities = [
   { icon: GraduationCap, title: 'Education Volunteer', desc: 'Teach, tutor, or mentor children in our education programs.', spots: 'Ongoing' },
   { icon: Stethoscope, title: 'Medical Camp Volunteer', desc: 'Support doctors and staff at our free medical camps.', spots: 'Monthly' },
@@ -12,7 +8,7 @@ const opportunities = [
   { icon: Users, title: 'Event Coordinator', desc: 'Plan and coordinate our fundraising and awareness events.', spots: 'Flexible' },
 ];
 
-export default function Volunteer({ onNavigate }: VolunteerProps) {
+export default function Volunteer() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',

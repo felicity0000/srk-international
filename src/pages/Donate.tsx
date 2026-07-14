@@ -1,10 +1,6 @@
 import { useState } from 'react';
 import { Heart, CheckCircle2, Shield, Users, GraduationCap, Stethoscope, Shirt, UtensilsCrossed, Sofa, BookOpen, ArrowRight } from 'lucide-react';
 
-interface DonateProps {
-  onNavigate: (page: string) => void;
-}
-
 const itemCategories = [
   { icon: GraduationCap, label: 'School Supplies', desc: 'Books, uniforms, stationery, and bags' },
   { icon: Shirt, label: 'Clothing & Blankets', desc: 'New or gently used clothes and bedding' },
@@ -16,7 +12,7 @@ const itemCategories = [
 
 const deliveryOptions = ['I will drop it off', 'Please arrange a pickup'];
 
-export default function Donate({ onNavigate }: DonateProps) {
+export default function Donate() {
   const [category, setCategory] = useState(itemCategories[0].label);
   const [donorInfo, setDonorInfo] = useState({ name: '', email: '', phone: '' });
   const [itemDetails, setItemDetails] = useState({ description: '', quantity: '' });
