@@ -96,7 +96,7 @@ export default function Home({ onNavigate }: HomeProps) {
               <span className="text-srk-orange-light">Transforming Lives</span>
             </h1>
             <p className="text-lg md:text-xl text-blue-100 mt-6 leading-relaxed max-w-2xl animate-fade-in-up">
-              SRK International Society is a global NGO dedicated to creating lasting change through education, healthcare, and sustainable community development.
+              SRK International Society is a global NGO dedicated to creating lasting change through education, healthcare, mental health support, and sustainable community development.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-10 animate-fade-in-up">
               <button
@@ -151,7 +151,7 @@ export default function Home({ onNavigate }: HomeProps) {
                 Creating a World Where Every Life Matters
               </h2>
               <p className="text-gray-600 leading-relaxed mb-6">
-                At SRK International Society, we believe that every individual deserves access to education, healthcare, and the opportunity to live with dignity. Our mission is to serve vulnerable communities with compassion and build sustainable pathways out of poverty.
+                At SRK International Society, we believe that every individual deserves access to education, healthcare, mental health support, and the opportunity to live with dignity. Our mission is to serve vulnerable communities with compassion and build sustainable pathways out of poverty.
               </p>
               <p className="text-gray-600 leading-relaxed mb-8">
                 Through strategic partnerships, dedicated volunteers, and the generosity of our donors, we work tirelessly to create lasting, meaningful impact in the lives of those who need it most.

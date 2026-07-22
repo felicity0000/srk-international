@@ -1,4 +1,5 @@
 // components/icons/SocialIcons.tsx
+
 type IconProps = { className?: string };
 
 export const FacebookIcon = ({ className }: IconProps) => (

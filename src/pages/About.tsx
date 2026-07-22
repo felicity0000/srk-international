@@ -43,7 +43,7 @@ export default function About({ onNavigate }: AboutProps) {
             Who We Are
           </h1>
           <p className="text-blue-100 text-lg leading-relaxed">
-            SRK International Society is a non-profit organization committed to serving humanity through compassion-driven initiatives in education, healthcare, and community development.
+            SRK International Society is a non-profit organization committed to serving humanity through compassion-driven initiatives in education, healthcare, mental health, and community development.
           </p>
         </div>
       </section>
@@ -92,7 +92,7 @@ export default function About({ onNavigate }: AboutProps) {
               </div>
               <h3 className="text-xl font-heading font-bold text-srk-blue-dark mb-3">Our Mission</h3>
               <p className="text-gray-600 leading-relaxed">
-                To serve vulnerable communities with compassion, providing access to education, healthcare, and sustainable development opportunities that transform lives.
+                To serve vulnerable communities with compassion, providing access to education, healthcare, mental health support, and sustainable development opportunities that transform lives.
               </p>
             </div>
             <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-srk-orange">

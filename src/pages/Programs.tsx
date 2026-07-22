@@ -1,4 +1,4 @@
-import { GraduationCap, Stethoscope, Home as HomeIcon, Droplets, BookOpen, Heart, CheckCircle2 } from 'lucide-react';
+import { GraduationCap, Stethoscope, Home as HomeIcon, Droplets, BookOpen, Heart, CheckCircle2, Brain } from 'lucide-react';
 
 interface ProgramsProps {
   onNavigate: (page: string) => void;
@@ -34,6 +34,21 @@ const programs = [
       'Partnerships with local hospitals for specialized care',
     ],
     impact: '25,000+ patients treated',
+  },
+  {
+    icon: Brain,
+    title: 'Mental Health Support',
+    color: 'green',
+    image: 'https://images.pexels.com/photos/6994913/pexels-photo-6994913.jpeg?auto=compress&cs=tinysrgb&w=800',
+    desc: 'Mental health is central to our mission. We work to break the stigma around mental health and ensure that support is accessible to everyone in the communities we serve.',
+    features: [
+      'Free and confidential counseling services',
+      'Mental health awareness campaigns and workshops',
+      'Peer support groups and safe spaces',
+      'Training for community mental health facilitators',
+      'Stress management and coping skills programs',
+    ],
+    impact: '1,000+ individuals supported',
   },
   {
     icon: HomeIcon,
