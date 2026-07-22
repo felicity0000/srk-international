@@ -1,4 +1,5 @@
 import { Heart, Mail, Phone, MapPin,  } from 'lucide-react';
+import images from '../assets/images';
 
 interface FooterProps {
   onNavigate: (page: string) => void;
@@ -16,16 +17,12 @@ export default function Footer({ onNavigate }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
+            <div className="inline-block bg-white rounded-lg px-4 py-3 mb-4">
               <img
-                src="/logo.png"
+                src={images.srk_logo}
                 alt="SRK International Society"
-                className="h-12 w-12 object-contain bg-white rounded-lg p-1"
+                className="h-12 w-auto object-contain"
               />
-              <div>
-                <div className="font-heading font-bold text-white text-lg">SRK International</div>
-                <div className="text-srk-orange-light text-sm">Society</div>
-              </div>
             </div>
             <p className="text-sm leading-relaxed text-gray-400">
               Dedicated to serving humanity through compassion, education, and sustainable community development across the globe.

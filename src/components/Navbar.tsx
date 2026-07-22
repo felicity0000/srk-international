@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import images from '../assets/images';
 
 interface NavbarProps {
   currentPage: string;
@@ -52,30 +53,10 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
             className="flex items-center gap-3 group"
           >
             <img
-              src="/logo.png"
+              src={images.srk_logo}
               alt="SRK International Society"
-              className="h-12 w-12 object-contain"
+              className="h-10 sm:h-14 w-auto object-contain"
             />
-            <div className="hidden sm:block">
-              <div
-                className={`font-heading font-bold text-lg leading-tight transition-colors duration-300 ${
-                  scrolled || currentPage !== 'home'
-                    ? 'text-srk-blue'
-                    : 'text-white'
-                }`}
-              >
-                SRK International
-              </div>
-              <div
-                className={`text-sm font-medium transition-colors duration-300 ${
-                  scrolled || currentPage !== 'home'
-                    ? 'text-srk-orange'
-                    : 'text-srk-yellow'
-                }`}
-              >
-                Society
-              </div>
-            </div>
           </button>
 
           {/* Desktop Nav */}
