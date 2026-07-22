@@ -1,5 +1,6 @@
 import { Heart, Mail, Phone, MapPin,  } from 'lucide-react';
 import images from '../assets/images';
+import { InstagramIcon, LinkedinIcon } from './SocialIcons';
 
 interface FooterProps {
   onNavigate: (page: string) => void;
@@ -28,15 +29,31 @@ export default function Footer({ onNavigate }: FooterProps) {
               Dedicated to serving humanity through compassion, education, and sustainable community development across the globe.
             </p>
             <div className="flex gap-3 mt-6">
-              {[Mail].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="bg-white/10 hover:bg-srk-orange p-2.5 rounded-lg transition-all duration-300 hover:scale-110"
-                >
-                  <Icon size={18} className="text-white" />
-                </a>
-              ))}
+              <a
+                href="mailto:info@srkinternational.org"
+                aria-label="Email us"
+                className="bg-white/10 hover:bg-srk-orange p-2.5 rounded-lg transition-all duration-300 hover:scale-110"
+              >
+                <Mail size={18} className="text-white" />
+              </a>
+              <a
+                href="https://www.instagram.com/srk_international_society?utm_source=qr"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow us on Instagram"
+                className="bg-white/10 hover:bg-srk-orange p-2.5 rounded-lg transition-all duration-300 hover:scale-110"
+              >
+                <InstagramIcon className="w-4.5 h-4.5 text-white" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/srk-international-society-342610422?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow us on LinkedIn"
+                className="bg-white/10 hover:bg-srk-orange p-2.5 rounded-lg transition-all duration-300 hover:scale-110"
+              >
+                <LinkedinIcon className="w-4.5 h-4.5 text-white" />
+              </a>
             </div>
           </div>
 
