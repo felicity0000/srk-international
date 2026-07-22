@@ -1,30 +1,27 @@
-import { Target, Eye, Heart, Users, Award, Globe2, ArrowRight } from 'lucide-react';
+import { Target, Eye, Heart, Users, Award, Globe2, ArrowRight, HandHeart, Sparkles, Trophy, CheckCircle2 } from 'lucide-react';
 
 interface AboutProps {
   onNavigate: (page: string) => void;
 }
 
 const values = [
-  { icon: Heart, title: 'Compassion', desc: 'We serve with empathy and kindness, treating every individual with the dignity they deserve.' },
-  { icon: Award, title: 'Integrity', desc: 'We uphold the highest standards of transparency, accountability, and ethical conduct.' },
-  { icon: Users, title: 'Inclusivity', desc: 'We welcome all people regardless of background, belief, or circumstance.' },
-  { icon: Globe2, title: 'Global Impact', desc: 'We think globally and act locally, creating change that ripples across communities.' },
+  { icon: Heart, title: 'Compassion', desc: 'We serve people with empathy, dignity, and respect.' },
+  { icon: Award, title: 'Integrity', desc: 'We uphold honesty, accountability, and transparency in everything we do.' },
+  { icon: HandHeart, title: 'Service', desc: 'We believe meaningful leadership begins with serving others.' },
+  { icon: Sparkles, title: 'Empowerment', desc: 'We equip individuals with the knowledge, skills, and opportunities to become agents of positive change.' },
+  { icon: Users, title: 'Collaboration', desc: 'We value partnerships and collective action to create greater community impact.' },
+  { icon: Trophy, title: 'Excellence', desc: 'We pursue quality, innovation, and continuous improvement in all our initiatives.' },
+  { icon: Globe2, title: 'Inclusion', desc: 'We embrace diversity and create opportunities for everyone regardless of age, gender, background, or belief.' },
 ];
 
-const milestones = [
-  { year: '2009', title: 'Foundation', desc: 'SRK International Society was founded with a vision to serve vulnerable communities.' },
-  { year: '2012', title: 'First Education Program', desc: 'Launched our flagship education initiative, reaching 500 children in the first year.' },
-  { year: '2015', title: 'Healthcare Expansion', desc: 'Expanded into healthcare with free medical camps serving rural areas.' },
-  { year: '2018', title: 'Global Reach', desc: 'Extended programs to 12 countries, impacting over 10,000 lives.' },
-  { year: '2021', title: 'Sustainable Development', desc: 'Launched community development programs focused on long-term self-reliance.' },
-  { year: '2024', title: '15,000+ Lives Changed', desc: 'Reached a milestone of transforming over 15,000 lives across our programs.' },
-];
-
-const team = [
-  { name: 'Suresh R. Kapoor', role: 'Founder & President', image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400' },
-  { name: 'Priya Nair', role: 'Director of Programs', image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400' },
-  { name: 'Arjun Mehta', role: 'Head of Operations', image: 'https://images.pexels.com/photos/3777943/pexels-photo-3777943.jpeg?auto=compress&cs=tinysrgb&w=400' },
-  { name: 'Dr. Kavita Rao', role: 'Healthcare Lead', image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400' },
+const partnerReasons = [
+  'Registered and compliant non-profit organization',
+  'Community-centered and impact-driven',
+  'Transparent and accountable operations',
+  'Strong volunteer network',
+  'Sustainable development approach',
+  'Experienced leadership and facilitators',
+  'Collaborative partnerships across sectors',
 ];
 
 export default function About({ onNavigate }: AboutProps) {
@@ -137,60 +134,18 @@ export default function About({ onNavigate }: AboutProps) {
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="py-20 bg-white">
+      {/* Why Partner With Us */}
+      <section className="py-20 gradient-section">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <span className="text-srk-orange font-semibold text-sm uppercase tracking-wider">Our Journey</span>
-            <h2 className="section-title mt-3">Milestones Through the Years</h2>
+            <span className="text-srk-orange font-semibold text-sm uppercase tracking-wider">Partner With Us</span>
+            <h2 className="section-title mt-3">Why Partner With SRK International Society?</h2>
           </div>
-          <div className="relative">
-            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-blue-100 md:-translate-x-1/2"></div>
-            {milestones.map((m, i) => (
-              <div
-                key={i}
-                className={`relative flex flex-col md:flex-row gap-6 mb-10 ${
-                  i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                }`}
-              >
-                <div className="md:w-1/2 pl-12 md:pl-0 md:px-8">
-                  <div className={`bg-white rounded-2xl shadow-md hover:shadow-xl p-6 border border-gray-100 transition-all duration-300 ${i % 2 === 0 ? 'md:text-right' : ''}`}>
-                    <div className="text-srk-orange font-heading font-bold text-2xl mb-1">{m.year}</div>
-                    <h3 className="font-heading font-bold text-srk-blue-dark mb-2">{m.title}</h3>
-                    <p className="text-sm text-gray-500 leading-relaxed">{m.desc}</p>
-                  </div>
-                </div>
-                <div className="absolute left-4 md:left-1/2 top-6 w-4 h-4 bg-srk-orange rounded-full border-4 border-white shadow md:-translate-x-1/2"></div>
-                <div className="md:w-1/2"></div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team */}
-      <section className="py-20 gradient-section">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <span className="text-srk-orange font-semibold text-sm uppercase tracking-wider">Our Leadership</span>
-            <h2 className="section-title mt-3">Meet the Team</h2>
-            <p className="section-subtitle max-w-2xl mx-auto">
-              Dedicated individuals who lead with passion, integrity, and an unwavering commitment to service.
-            </p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, i) => (
-              <div key={i} className="text-center group">
-                <div className="relative overflow-hidden rounded-2xl mb-4 shadow-md">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-linear-to-t from-srk-blue-dark/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                <h3 className="font-heading font-bold text-srk-blue-dark">{member.name}</h3>
-                <p className="text-srk-orange text-sm font-medium">{member.role}</p>
+          <div className="grid sm:grid-cols-2 gap-6">
+            {partnerReasons.map((reason, i) => (
+              <div key={i} className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 p-6 flex items-start gap-4">
+                <CheckCircle2 className="text-srk-orange shrink-0 mt-0.5" size={24} />
+                <span className="text-gray-700 font-medium leading-relaxed">{reason}</span>
               </div>
             ))}
           </div>

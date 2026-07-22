@@ -1,4 +1,4 @@
-import { ArrowRight, Heart, Users, GraduationCap, Home as HomeIcon, Stethoscope, Globe2, Quote } from 'lucide-react';
+import { ArrowRight, Heart, Users, GraduationCap, Home as HomeIcon, Stethoscope, Globe2, Quote, Sparkles, HandHeart, Award } from 'lucide-react';
 
 interface HomeProps {
   onNavigate: (page: string) => void;
@@ -13,22 +13,40 @@ const stats = [
 
 const programs = [
   {
+    icon: HomeIcon,
+    title: 'Community Development',
+    desc: 'We implement programs that improve livelihoods, strengthen communities, and create sustainable solutions to local challenges.',
+    image: 'https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=800',
+  },
+  {
+    icon: Sparkles,
+    title: 'Youth Empowerment',
+    desc: 'We prepare young people with leadership skills, mentorship, entrepreneurship training, life skills, and opportunities for personal growth.',
+    image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800',
+  },
+  {
     icon: GraduationCap,
-    title: 'Education for All',
-    desc: 'Providing quality education, scholarships, and learning resources to underprivileged children across communities.',
+    title: 'Education & Skills Development',
+    desc: 'We provide educational support, practical training, workshops, and capacity-building programs that help individuals improve their lives and careers.',
     image: 'https://images.pexels.com/photos/8617715/pexels-photo-8617715.jpeg?auto=compress&cs=tinysrgb&w=800',
   },
   {
     icon: Stethoscope,
-    title: 'Healthcare Access',
-    desc: 'Free medical camps, health awareness programs, and essential healthcare services for vulnerable populations.',
+    title: 'Health & Wellness',
+    desc: 'We promote healthy living through awareness campaigns, wellness programs, mental health education, nutrition, and community health initiatives.',
     image: 'https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&w=800',
   },
   {
-    icon: HomeIcon,
-    title: 'Community Development',
-    desc: 'Building sustainable livelihoods, supporting families, and empowering communities toward self-reliance.',
-    image: 'https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=800',
+    icon: HandHeart,
+    title: 'Humanitarian Support',
+    desc: 'We organize outreach programs that provide essential items and support to vulnerable individuals, families, schools, and communities, primarily by collecting and distributing essential goods that directly address community needs.',
+    image: 'https://images.pexels.com/photos/6994913/pexels-photo-6994913.jpeg?auto=compress&cs=tinysrgb&w=800',
+  },
+  {
+    icon: Award,
+    title: 'Leadership & Character Development',
+    desc: 'We nurture ethical leadership, responsible citizenship, integrity, accountability, and positive values through mentorship and community engagement.',
+    image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=800',
   },
 ];
 
@@ -185,10 +203,10 @@ export default function Home({ onNavigate }: HomeProps) {
             <span className="text-srk-orange font-semibold text-sm uppercase tracking-wider">What We Do</span>
             <h2 className="section-title mt-3">Our Core Programs</h2>
             <p className="section-subtitle max-w-2xl mx-auto">
-              We focus on three key areas to create comprehensive, lasting impact in communities around the world.
+              We focus on six key areas to create comprehensive, lasting impact in communities around the world.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {programs.map((program, i) => (
               <div
                 key={i}
