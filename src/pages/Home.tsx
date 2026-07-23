@@ -92,8 +92,8 @@ export default function Home({ onNavigate }: HomeProps) {
               <span className="text-white text-sm font-medium">Serving Humanity Since 2009</span>
             </div>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white leading-tight text-balance animate-fade-in-up">
-              Empowering Communities,{' '}
-              <span className="text-srk-orange-light">Transforming Lives</span>
+              Inspiring hope,{' '}
+              <span className="text-srk-orange-light">Empowering lives and transforming communities</span>
             </h1>
             <p className="text-lg md:text-xl text-blue-100 mt-6 leading-relaxed max-w-2xl animate-fade-in-up">
               SRK International Society is a global NGO dedicated to creating lasting change through education, healthcare, mental health support, and sustainable community development.

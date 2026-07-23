@@ -22,7 +22,7 @@ export default function Footer({ onNavigate }: FooterProps) {
               <img
                 src={images.srk_logo}
                 alt="SRK International Society"
-                className="h-12 w-auto object-contain"
+                className="h-20 w-auto object-contain"
               />
             </div>
             <p className="text-sm leading-relaxed text-gray-400">
