@@ -55,7 +55,7 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
             <img
               src={images.srk_logo}
               alt="SRK International Society"
-              className="h-10 sm:h-14 w-auto object-contain"
+              className="h-10 sm:h-14 w-auto object-contain rounded-lg"
             />
           </button>
 
