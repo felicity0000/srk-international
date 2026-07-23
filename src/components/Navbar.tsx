@@ -110,7 +110,7 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
           {/* CTA Button */}
           <button
             onClick={() => handleNav('donate')}
-            className="hidden lg:block bg-srk-orange hover:bg-orange-600 text-white font-semibold text-sm px-5 py-2.5 rounded-lg transition-all duration-300 hover:shadow-lg hover:scale-105"
+            className="hidden lg:block bg-srk-orange hover:bg-srk-orange-light text-white font-semibold text-sm px-5 py-2.5 rounded-lg transition-all duration-300 hover:shadow-lg hover:scale-105"
           >
             Donate Now
           </button>
@@ -150,7 +150,7 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
             ))}
             <button
               onClick={() => handleNav('donate')}
-              className="w-full mt-3 bg-srk-orange text-white font-semibold py-3 rounded-lg text-sm hover:bg-orange-600 transition-colors"
+              className="w-full mt-3 bg-srk-orange text-white font-semibold py-3 rounded-lg text-sm hover:bg-srk-orange-light transition-colors"
             >
               Donate Now
             </button>

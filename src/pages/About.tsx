@@ -14,6 +14,12 @@ const values = [
   { icon: Globe2, title: 'Inclusion', desc: 'We embrace diversity and create opportunities for everyone regardless of age, gender, background, or belief.' },
 ];
 
+const accentColors = [
+  { wrap: 'bg-blue-50 group-hover:bg-srk-blue', icon: 'text-srk-blue group-hover:text-white' },
+  { wrap: 'bg-orange-50 group-hover:bg-srk-orange', icon: 'text-srk-orange group-hover:text-white' },
+  { wrap: 'bg-green-50 group-hover:bg-srk-green', icon: 'text-srk-green group-hover:text-white' },
+];
+
 const partnerReasons = [
   'Registered and compliant non-profit organization',
   'Community-centered and impact-driven',
@@ -121,15 +127,18 @@ export default function About({ onNavigate }: AboutProps) {
             <h2 className="section-title mt-3">What Guides Us</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((value, i) => (
-              <div key={i} className="value-card text-center">
-                <div className="inline-flex items-center justify-center w-14 h-14 bg-blue-50 rounded-xl mb-4 mx-auto group-hover:bg-srk-orange transition-colors duration-300">
-                  <value.icon className="text-srk-blue group-hover:text-white transition-colors duration-300" size={26} />
+            {values.map((value, i) => {
+              const accent = accentColors[i % accentColors.length];
+              return (
+                <div key={i} className="value-card text-center group">
+                  <div className={`inline-flex items-center justify-center w-14 h-14 ${accent.wrap} rounded-xl mb-4 mx-auto transition-colors duration-300`}>
+                    <value.icon className={`${accent.icon} transition-colors duration-300`} size={26} />
+                  </div>
+                  <h3 className="font-heading font-bold text-srk-blue-dark mb-2">{value.title}</h3>
+                  <p className="text-sm text-gray-500 leading-relaxed">{value.desc}</p>
                 </div>
-                <h3 className="font-heading font-bold text-srk-blue-dark mb-2">{value.title}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed">{value.desc}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

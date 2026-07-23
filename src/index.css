@@ -1,31 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-primary-50: #e8f0fb;
-  --color-primary-100: #c5d8f5;
-  --color-primary-200: #9bbde8;
-  --color-primary-300: #6fa1db;
-  --color-primary-400: #4d8ad2;
-  --color-primary-500: #2b73c9;
-  --color-primary-600: #1e5faa;
-  --color-primary-700: #1a4f91;
-  --color-primary-800: #163f78;
-  --color-primary-900: #0e2d58;
+  --color-primary-50: #e9edf8;
+  --color-primary-100: #c7d3ee;
+  --color-primary-200: #a1b4e2;
+  --color-primary-300: #7994d6;
+  --color-primary-400: #5a7cce;
+  --color-primary-500: #3b64c5;
+  --color-primary-600: #13439f;
+  --color-primary-700: #10388a;
+  --color-primary-800: #0d2d6f;
+  --color-primary-900: #091f4d;
 
-  --color-srk-blue: #1a4d8c;
-  --color-srk-blue-dark: #0e2d58;
-  --color-srk-blue-light: #2b6cb0;
-  --color-srk-orange: #f47920;
-  --color-srk-orange-light: #f9a84d;
-  --color-srk-green: #2e7d32;
-  --color-srk-green-light: #4caf50;
-  --color-srk-yellow: #f5c518;
+  --color-srk-blue: #13439f;
+  --color-srk-blue-dark: #0a2a66;
+  --color-srk-blue-light: #3d64b8;
+  --color-srk-orange: #e9ac3c;
+  --color-srk-orange-light: #f0c165;
+  --color-srk-green: #407729;
+  --color-srk-green-light: #5c9a44;
+  --color-srk-yellow: #e9ac3c;
   --color-srk-red: #c0392b;
   --color-srk-black: #1a1a1a;
 
-  --font-sans: Inter, system-ui, sans-serif;
-  --font-heading: Merriweather, Georgia, serif;
+  --font-sans: Quicksand, system-ui, sans-serif;
+  --font-heading: Poppins, system-ui, sans-serif;
 
   --animate-fade-in-up: fadeInUp 0.6s ease-out;
   --animate-fade-in: fadeIn 0.5s ease-out;

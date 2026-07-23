@@ -16,6 +16,12 @@ const itemCategories = [
 
 const deliveryOptions = ['I will drop it off', 'Please arrange a pickup'];
 
+const accentColors = [
+  { wrap: 'bg-blue-50 group-hover:bg-srk-blue', icon: 'text-srk-blue group-hover:text-white' },
+  { wrap: 'bg-orange-50 group-hover:bg-srk-orange', icon: 'text-srk-orange group-hover:text-white' },
+  { wrap: 'bg-green-50 group-hover:bg-srk-green', icon: 'text-srk-green group-hover:text-white' },
+];
+
 export default function Donate({ onNavigate }: DonateProps) {
   const [category, setCategory] = useState(itemCategories[0].label);
   const [donorInfo, setDonorInfo] = useState({ name: '', email: '', phone: '' });
@@ -60,15 +66,18 @@ export default function Donate({ onNavigate }: DonateProps) {
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {itemCategories.map((item, i) => (
-              <div key={i} className="value-card group">
-                <div className="inline-flex items-center justify-center w-14 h-14 bg-blue-50 rounded-xl mb-4 group-hover:bg-srk-orange transition-colors duration-300">
-                  <item.icon className="text-srk-blue group-hover:text-white transition-colors duration-300" size={26} />
+            {itemCategories.map((item, i) => {
+              const accent = accentColors[i % accentColors.length];
+              return (
+                <div key={i} className="value-card group">
+                  <div className={`inline-flex items-center justify-center w-14 h-14 ${accent.wrap} rounded-xl mb-4 transition-colors duration-300`}>
+                    <item.icon className={`${accent.icon} transition-colors duration-300`} size={26} />
+                  </div>
+                  <div className="text-lg font-heading font-bold text-srk-blue-dark mb-1">{item.label}</div>
+                  <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
                 </div>
-                <div className="text-lg font-heading font-bold text-srk-blue-dark mb-1">{item.label}</div>
-                <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

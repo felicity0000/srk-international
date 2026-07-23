@@ -5,6 +5,12 @@ interface VolunteerProps {
   onNavigate: (page: string) => void;
 }
 
+const accentColors = [
+  { wrap: 'bg-blue-50 group-hover:bg-srk-blue', icon: 'text-srk-blue group-hover:text-white' },
+  { wrap: 'bg-orange-50 group-hover:bg-srk-orange', icon: 'text-srk-orange group-hover:text-white' },
+  { wrap: 'bg-green-50 group-hover:bg-srk-green', icon: 'text-srk-green group-hover:text-white' },
+];
+
 const opportunities = [
   { icon: GraduationCap, title: 'Education Volunteer', desc: 'Teach, tutor, or mentor children in our education programs.', spots: 'Ongoing' },
   { icon: Stethoscope, title: 'Medical Camp Volunteer', desc: 'Support doctors and staff at our free medical camps.', spots: 'Monthly' },
@@ -85,16 +91,19 @@ export default function Volunteer({ onNavigate }: VolunteerProps) {
               <h2 className="section-title mt-3">Volunteer Roles</h2>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {opportunities.map((opp, i) => (
-                <div key={i} className="value-card">
-                  <div className="inline-flex items-center justify-center w-14 h-14 bg-blue-50 rounded-xl mb-4 group-hover:bg-srk-orange transition-colors duration-300">
-                    <opp.icon className="text-srk-blue group-hover:text-white transition-colors duration-300" size={26} />
+              {opportunities.map((opp, i) => {
+                const accent = accentColors[i % accentColors.length];
+                return (
+                  <div key={i} className="value-card group">
+                    <div className={`inline-flex items-center justify-center w-14 h-14 ${accent.wrap} rounded-xl mb-4 transition-colors duration-300`}>
+                      <opp.icon className={`${accent.icon} transition-colors duration-300`} size={26} />
+                    </div>
+                    <h3 className="font-heading font-bold text-srk-blue-dark mb-2">{opp.title}</h3>
+                    <p className="text-sm text-gray-500 leading-relaxed mb-3">{opp.desc}</p>
+                    <span className="inline-block text-xs font-medium text-srk-orange bg-orange-50 px-3 py-1 rounded-full">{opp.spots}</span>
                   </div>
-                  <h3 className="font-heading font-bold text-srk-blue-dark mb-2">{opp.title}</h3>
-                  <p className="text-sm text-gray-500 leading-relaxed mb-3">{opp.desc}</p>
-                  <span className="inline-block text-xs font-medium text-srk-orange bg-orange-50 px-3 py-1 rounded-full">{opp.spots}</span>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 

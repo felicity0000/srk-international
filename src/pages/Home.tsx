@@ -50,6 +50,12 @@ const programs = [
   },
 ];
 
+const accentColors = [
+  { wrap: 'bg-blue-50 group-hover:bg-srk-blue', icon: 'text-srk-blue group-hover:text-white', solid: 'text-srk-blue' },
+  { wrap: 'bg-orange-50 group-hover:bg-srk-orange', icon: 'text-srk-orange group-hover:text-white', solid: 'text-srk-orange' },
+  { wrap: 'bg-green-50 group-hover:bg-srk-green', icon: 'text-srk-green group-hover:text-white', solid: 'text-srk-green' },
+];
+
 const testimonials = [
   {
     name: 'Anjali Sharma',
@@ -125,18 +131,21 @@ export default function Home({ onNavigate }: HomeProps) {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, i) => (
-              <div
-                key={i}
-                className="text-center group hover:-translate-y-2 transition-all duration-300"
-              >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-50 rounded-2xl mb-4 group-hover:bg-srk-orange group-hover:scale-110 transition-all duration-300">
-                  <stat.icon className="text-srk-blue group-hover:text-white transition-colors duration-300" size={28} />
+            {stats.map((stat, i) => {
+              const accent = accentColors[i % accentColors.length];
+              return (
+                <div
+                  key={i}
+                  className="text-center group hover:-translate-y-2 transition-all duration-300"
+                >
+                  <div className={`inline-flex items-center justify-center w-16 h-16 ${accent.wrap} rounded-2xl mb-4 group-hover:scale-110 transition-all duration-300`}>
+                    <stat.icon className={`${accent.icon} transition-colors duration-300`} size={28} />
+                  </div>
+                  <div className="text-3xl md:text-4xl font-heading font-bold text-srk-blue-dark">{stat.value}</div>
+                  <div className="text-sm text-gray-500 mt-1 font-medium">{stat.label}</div>
                 </div>
-                <div className="text-3xl md:text-4xl font-heading font-bold text-srk-blue-dark">{stat.value}</div>
-                <div className="text-sm text-gray-500 mt-1 font-medium">{stat.label}</div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -207,34 +216,37 @@ export default function Home({ onNavigate }: HomeProps) {
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {programs.map((program, i) => (
-              <div
-                key={i}
-                className="card group cursor-pointer"
-                onClick={() => handleNav('programs')}
-              >
-                <div className="relative h-56 overflow-hidden">
-                  <img
-                    src={program.image}
-                    alt={program.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-linear-to-t from-srk-blue-dark/80 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4">
-                    <div className="bg-white rounded-xl p-3 shadow-lg inline-block">
-                      <program.icon className="text-srk-blue" size={24} />
+            {programs.map((program, i) => {
+              const accent = accentColors[i % accentColors.length];
+              return (
+                <div
+                  key={i}
+                  className="card group cursor-pointer"
+                  onClick={() => handleNav('programs')}
+                >
+                  <div className="relative h-56 overflow-hidden">
+                    <img
+                      src={program.image}
+                      alt={program.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-linear-to-t from-srk-blue-dark/80 to-transparent"></div>
+                    <div className="absolute bottom-4 left-4">
+                      <div className="bg-white rounded-xl p-3 shadow-lg inline-block">
+                        <program.icon className={accent.solid} size={24} />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-heading font-bold text-srk-blue-dark mb-3">{program.title}</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">{program.desc}</p>
+                    <div className="mt-4 flex items-center gap-2 text-srk-orange font-medium text-sm group-hover:gap-3 transition-all duration-300">
+                      Learn More <ArrowRight size={16} />
                     </div>
                   </div>
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-heading font-bold text-srk-blue-dark mb-3">{program.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{program.desc}</p>
-                  <div className="mt-4 flex items-center gap-2 text-srk-orange font-medium text-sm group-hover:gap-3 transition-all duration-300">
-                    Learn More <ArrowRight size={16} />
-                  </div>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
