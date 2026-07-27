@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import NewsletterBanner from './components/NewsletterBanner';
 import Home from './pages/Home';
 import About from './pages/About';
 import Programs from './pages/Programs';
@@ -55,6 +56,7 @@ function App() {
     <div className="min-h-screen bg-white flex flex-col">
       <Navbar currentPage={currentPage} onNavigate={handleNavigate} />
       <main className="flex-1">{renderPage()}</main>
+      <NewsletterBanner />
       <Footer onNavigate={handleNavigate} />
     </div>
   );
