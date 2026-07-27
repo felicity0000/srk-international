@@ -1,3 +1,5 @@
+import images from "../assets/images";
+
 export interface UpcomingEvent {
   slug: string;
   title: string;
@@ -29,7 +31,7 @@ export const upcomingEvents: UpcomingEvent[] = [
     time: '9:00 AM - 4:00 PM',
     location: 'Kampala, Uganda',
     desc: 'Join us for our annual education drive where we distribute school supplies, uniforms, and scholarships to 500+ underprivileged children.',
-    image: 'https://images.pexels.com/photos/8617715/pexels-photo-8617715.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    image: images.education,
     spots: '200 volunteers needed',
     highlights: [
       'School supplies and uniforms for 500+ children',
@@ -51,7 +53,7 @@ export const upcomingEvents: UpcomingEvent[] = [
     time: '8:00 AM - 2:00 PM',
     location: 'Wakiso District, Uganda',
     desc: 'A comprehensive free medical camp providing general health checkups, eye care, and maternal health services to rural communities.',
-    image: 'https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    image: images.healthcare_access,
     spots: '50 volunteers needed',
     highlights: [
       'General health checkups for all ages',
@@ -73,7 +75,7 @@ export const upcomingEvents: UpcomingEvent[] = [
     time: '10:00 AM - 12:00 PM',
     location: 'Wakiso District, Uganda',
     desc: 'Launch of our new clean water initiative, installing water purification systems in 5 villages to provide safe drinking water.',
-    image: 'https://images.pexels.com/photos/2918361/pexels-photo-2918361.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    image: images.clean_water,
     spots: '30 volunteers needed',
     highlights: [
       'Water purification systems installed in 5 villages',
@@ -91,25 +93,25 @@ export const upcomingEvents: UpcomingEvent[] = [
 ];
 
 export const pastEvents: PastEvent[] = [
-  {
-    slug: 'winter-clothing-drive-2025',
-    title: 'Winter Clothing Drive 2025',
-    date: 'Dec 2025',
-    location: 'Kampala & Wakiso',
-    image: 'https://images.pexels.com/photos/6994913/pexels-photo-6994913.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    impact: '5,000+ people received warm clothing',
-    content: [
-      'Throughout December 2025, SRK International Society ran a community-wide clothing drive across Kampala and Wakiso District, collecting and distributing warm clothing to families facing the cold rainy season.',
-      'With the help of over 80 volunteers and dozens of community drop-off points, we collected thousands of clothing items which were sorted, cleaned where needed, and distributed directly to families identified through our community partners.',
-      'In total, more than 5,000 people received warm clothing through this drive, including children at three local primary schools who received jackets in time for the new term.',
-    ],
-  },
+  // {
+  //   slug: 'winter-clothing-drive-2025',
+  //   title: 'Winter Clothing Drive 2025',
+  //   date: 'Dec 2025',
+  //   location: 'Kampala & Wakiso',
+  //   image: 'https://images.pexels.com/photos/6994913/pexels-photo-6994913.jpeg?auto=compress&cs=tinysrgb&w=1200',
+  //   impact: '5,000+ people received warm clothing',
+  //   content: [
+  //     'Throughout December 2025, SRK International Society ran a community-wide clothing drive across Kampala and Wakiso District, collecting and distributing warm clothing to families facing the cold rainy season.',
+  //     'With the help of over 80 volunteers and dozens of community drop-off points, we collected thousands of clothing items which were sorted, cleaned where needed, and distributed directly to families identified through our community partners.',
+  //     'In total, more than 5,000 people received warm clothing through this drive, including children at three local primary schools who received jackets in time for the new term.',
+  //   ],
+  // },
   {
     slug: 'women-skills-training-graduation',
     title: 'Women Skills Training Graduation',
     date: 'Nov 2025',
     location: 'Kampala, Uganda',
-    image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    image: images.women_empowerment,
     impact: '120 women graduated with new skills',
     content: [
       'After six months of training in tailoring, hairdressing, and small business management, 120 women graduated from our Vocational Skills Training Program in a celebration held in Kampala.',
@@ -117,25 +119,25 @@ export const pastEvents: PastEvent[] = [
       'Several graduates have already begun trading, and a number have gone on to train other women in their communities, extending the program\'s impact well beyond the original cohort.',
     ],
   },
-  {
-    slug: 'flood-relief-mission',
-    title: 'Flood Relief Mission',
-    date: 'Sep 2025',
-    location: 'Wakiso District, Uganda',
-    image: 'https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    impact: '2,000+ families received emergency aid',
-    content: [
-      'Heavy rains in September 2025 caused severe flooding across parts of Wakiso District, displacing families and damaging homes and property. SRK International Society mobilized an emergency relief response within 48 hours.',
-      'Our team distributed emergency food packages, clean water, blankets, and hygiene kits to more than 2,000 affected families, working closely with local authorities to reach the hardest-hit areas first.',
-      'Beyond the immediate relief, we supported early recovery efforts by helping several households repair essential structures and access temporary shelter.',
-    ],
-  },
+  // {
+  //   slug: 'flood-relief-mission',
+  //   title: 'Flood Relief Mission',
+  //   date: 'Sep 2025',
+  //   location: 'Wakiso District, Uganda',
+  //   image: images.flood_relief,
+  //   impact: '2,000+ families received emergency aid',
+  //   content: [
+  //     'Heavy rains in September 2025 caused severe flooding across parts of Wakiso District, displacing families and damaging homes and property. SRK International Society mobilized an emergency relief response within 48 hours.',
+  //     'Our team distributed emergency food packages, clean water, blankets, and hygiene kits to more than 2,000 affected families, working closely with local authorities to reach the hardest-hit areas first.',
+  //     'Beyond the immediate relief, we supported early recovery efforts by helping several households repair essential structures and access temporary shelter.',
+  //   ],
+  // },
   {
     slug: 'health-awareness-week',
     title: 'Health Awareness Week',
     date: 'Aug 2025',
     location: 'Kampala, Uganda',
-    image: 'https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    image: images.mental_health,
     impact: '10,000+ people reached',
     content: [
       'Health Awareness Week brought free health talks, screenings, and community outreach events to neighborhoods across Kampala over the course of seven days.',
