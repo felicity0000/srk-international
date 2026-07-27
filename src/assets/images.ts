@@ -3,7 +3,7 @@ import education from "./education.jpg";
 import community_devt from "./community-devt.jpg";
 import health_care from "./health-care.jpg";
 import volunteers from "./volunteer.jpg";
-import education_for_all from "./education-for-all.jpg";
+import education_for_all from "./education-for-all-2.jpg";
 import healthcare_access from "./healthcare-access.jpg";
 import mental_health from "./mental-health.jpg";
 import women_empowerment from "./women-empowerment.jpg";
