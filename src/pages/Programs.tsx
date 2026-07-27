@@ -1,4 +1,4 @@
-import { GraduationCap, Stethoscope, Home as HomeIcon, Droplets, BookOpen, Heart, CheckCircle2, Brain } from 'lucide-react';
+import { GraduationCap, Stethoscope, Home as HomeIcon, BookOpen, CheckCircle2, Brain } from 'lucide-react';
 import images from '../assets/images';
 
 interface ProgramsProps {
