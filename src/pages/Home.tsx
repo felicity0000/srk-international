@@ -1,4 +1,5 @@
 import { ArrowRight, Heart, Users, GraduationCap, Home as HomeIcon, Stethoscope, Globe2, Quote, Sparkles, HandHeart, Award } from 'lucide-react';
+import images from '../assets/images';
 
 interface HomeProps {
   onNavigate: (page: string) => void;
@@ -16,37 +17,37 @@ const programs = [
     icon: HomeIcon,
     title: 'Community Development',
     desc: 'We implement programs that improve livelihoods, strengthen communities, and create sustainable solutions to local challenges.',
-    image: 'https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: images.community_devt,
   },
   {
     icon: Sparkles,
     title: 'Youth Empowerment',
     desc: 'We prepare young people with leadership skills, mentorship, entrepreneurship training, life skills, and opportunities for personal growth.',
-    image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: images.hope,
   },
   {
     icon: GraduationCap,
     title: 'Education & Skills Development',
     desc: 'We provide educational support, practical training, workshops, and capacity-building programs that help individuals improve their lives and careers.',
-    image: 'https://images.pexels.com/photos/8617715/pexels-photo-8617715.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: images.education_for_all,
   },
   {
     icon: Stethoscope,
     title: 'Health & Wellness',
     desc: 'We promote healthy living through awareness campaigns, wellness programs, mental health education, nutrition, and community health initiatives.',
-    image: 'https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: images.health_care,
   },
   {
     icon: HandHeart,
     title: 'Humanitarian Support',
     desc: 'We organize outreach programs that provide essential items and support to vulnerable individuals, families, schools, and communities, primarily by collecting and distributing essential goods that directly address community needs.',
-    image: 'https://images.pexels.com/photos/6994913/pexels-photo-6994913.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: images.volunteers,
   },
   {
     icon: Award,
     title: 'Leadership & Character Development',
     desc: 'We nurture ethical leadership, responsible citizenship, integrity, accountability, and positive values through mentorship and community engagement.',
-    image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: images.women_empowerment,
   },
 ];
 
@@ -61,19 +62,19 @@ const testimonials = [
     name: 'Anjali Sharma',
     role: 'Beneficiary, Education Program',
     text: 'SRK International Society changed my life. Their scholarship program allowed me to complete my education and pursue my dreams. I am forever grateful.',
-    image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=200',
+    image: '',
   },
   {
     name: 'Rajesh Kumar',
     role: 'Volunteer Coordinator',
     text: 'Working with SRK has been the most fulfilling experience of my life. The impact we create together in communities is truly remarkable.',
-    image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=200',
+    image: '',
   },
   {
     name: 'Dr. Meena Verma',
     role: 'Healthcare Partner',
     text: 'The dedication of SRK International Society toward healthcare access in remote areas is unmatched. They bring hope where it is needed most.',
-    image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=200',
+    image: '',
   },
 ];
 
@@ -173,24 +174,24 @@ export default function Home({ onNavigate }: HomeProps) {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4">
                   <img
-                    src="https://images.pexels.com/photos/8617715/pexels-photo-8617715.jpeg?auto=compress&cs=tinysrgb&w=400"
+                    src={images.education}
                     alt="Education program"
                     className="rounded-2xl shadow-lg w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
                   />
                   <img
-                    src="https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=400"
+                    src={images.community_devt}
                     alt="Community development"
                     className="rounded-2xl shadow-lg w-full h-32 object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <div className="space-y-4 pt-8">
                   <img
-                    src="https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&w=400"
+                    src={images.health_care}
                     alt="Healthcare"
                     className="rounded-2xl shadow-lg w-full h-32 object-cover hover:scale-105 transition-transform duration-300"
                   />
                   <img
-                    src="https://images.pexels.com/photos/6994913/pexels-photo-6994913.jpeg?auto=compress&cs=tinysrgb&w=400"
+                    src={images.volunteers}
                     alt="Volunteers"
                     className="rounded-2xl shadow-lg w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
                   />

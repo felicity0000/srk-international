@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Heart, Users, GraduationCap, Stethoscope, Home as HomeIcon, CheckCircle2, ArrowRight } from 'lucide-react';
+import images from '../assets/images';
 
 interface VolunteerProps {
   onNavigate: (page: string) => void;
@@ -79,8 +80,8 @@ export default function Volunteer({ onNavigate }: VolunteerProps) {
               </ul>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <img src="https://images.pexels.com/photos/6994913/pexels-photo-6994913.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Volunteers" className="rounded-2xl shadow-lg w-full h-48 object-cover" />
-              <img src="https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Community work" className="rounded-2xl shadow-lg w-full h-48 object-cover mt-8" />
+              <img src={images.volunteers} alt="Volunteers" className="rounded-2xl shadow-lg w-full h-48 object-cover" />
+              <img src={images.women_empowerment} alt="Community work" className="rounded-2xl shadow-lg w-full h-48 object-cover mt-8" />
             </div>
           </div>
 

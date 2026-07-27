@@ -1,3 +1,5 @@
+import images from "../assets/images";
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -13,9 +15,9 @@ export const featuredPost: BlogPost = {
   slug: 'srk-reaches-15000-lives-milestone',
   title: 'SRK International Society Reaches 15,000 Lives: A Milestone of Hope',
   excerpt: 'This year, we crossed a major milestone in our journey of service. Here\'s a look back at the impact we\'ve created together and what lies ahead.',
-  image: 'https://images.pexels.com/photos/6994913/pexels-photo-6994913.jpeg?auto=compress&cs=tinysrgb&w=1200',
+  image: images.hope,
   date: 'Jan 10, 2026',
-  author: 'Priya Nair',
+  author: 'John Kaweesa',
   category: 'Impact Stories',
   content: [
     'This month, SRK International Society reached a milestone we have been working toward for years: 15,000 lives directly touched by our programs in education, healthcare, and community development across Kampala and Wakiso District.',
@@ -30,7 +32,7 @@ export const posts: BlogPost[] = [
     slug: 'education-program-breaking-cycle-of-poverty',
     title: 'How Our Education Program Is Breaking the Cycle of Poverty',
     excerpt: 'Meet the children whose lives have been transformed through access to quality education and scholarships.',
-    image: 'https://images.pexels.com/photos/8617715/pexels-photo-8617715.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    image: images.education_for_all,
     date: 'Jan 5, 2026',
     author: 'Arjun Mehta',
     category: 'Education',
@@ -45,7 +47,7 @@ export const posts: BlogPost[] = [
     slug: 'mobile-clinic-healthcare-remote-villages',
     title: 'Bringing Healthcare to Remote Villages: Our Mobile Clinic Story',
     excerpt: 'Discover how our mobile medical clinics are reaching communities that have never had access to healthcare before.',
-    image: 'https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    image: images.healthcare_access,
     date: 'Dec 28, 2025',
     author: 'Dr. Kavita Rao',
     category: 'Healthcare',
@@ -60,7 +62,7 @@ export const posts: BlogPost[] = [
     slug: 'women-empowerment-skills-to-self-reliance',
     title: 'Women Empowerment: From Skills to Self-Reliance',
     excerpt: 'The inspiring stories of women who have built sustainable livelihoods through our vocational training programs.',
-    image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    image: images.women_empowerment,
     date: 'Dec 20, 2025',
     author: 'Priya Nair',
     category: 'Empowerment',
@@ -75,7 +77,7 @@ export const posts: BlogPost[] = [
     slug: 'clean-water-village-transformed',
     title: 'Clean Water Changes Everything: A Village Transformed',
     excerpt: 'How a single water purification system transformed the health and future of an entire village.',
-    image: 'https://images.pexels.com/photos/2918361/pexels-photo-2918361.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    image: images.clean_water,
     date: 'Dec 15, 2025',
     author: 'Arjun Mehta',
     category: 'Development',
@@ -90,7 +92,7 @@ export const posts: BlogPost[] = [
     slug: 'volunteer-spotlight-stories-that-inspire',
     title: 'Volunteer Spotlight: Stories That Inspire',
     excerpt: 'Meet the incredible volunteers who dedicate their time and skills to creating lasting change in communities.',
-    image: 'https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    image: images.volunteers,
     date: 'Dec 8, 2025',
     author: 'Suresh R. Kapoor',
     category: 'Community',
@@ -101,21 +103,21 @@ export const posts: BlogPost[] = [
       'If you are inspired by these stories, we would love to have you join our volunteer community.',
     ],
   },
-  {
-    slug: 'disaster-relief-standing-with-communities',
-    title: 'Disaster Relief: Standing With Communities in Crisis',
-    excerpt: 'A behind-the-scenes look at our emergency response teams and how we deliver aid when it matters most.',
-    image: 'https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    date: 'Dec 1, 2025',
-    author: 'Arjun Mehta',
-    category: 'Relief',
-    content: [
-      'When disaster strikes, the first 48 hours matter most. Our emergency response team is trained to mobilize quickly, coordinating with local authorities to assess needs and deliver aid where it is needed most.',
-      'Our relief kits typically include emergency food, clean water, blankets, and hygiene supplies, tailored to the specific needs of the crisis at hand, whether flooding, fire, or displacement.',
-      'Beyond the immediate response, we stay engaged with affected communities through the recovery phase, helping connect families with longer-term support as they rebuild.',
-      'None of this would be possible without a dedicated network of volunteers and donors who allow us to respond the moment a crisis begins.',
-    ],
-  },
+  // {
+  //   slug: 'disaster-relief-standing-with-communities',
+  //   title: 'Disaster Relief: Standing With Communities in Crisis',
+  //   excerpt: 'A behind-the-scenes look at our emergency response teams and how we deliver aid when it matters most.',
+  //   image: 'https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=1200',
+  //   date: 'Dec 1, 2025',
+  //   author: 'Arjun Mehta',
+  //   category: 'Relief',
+  //   content: [
+  //     'When disaster strikes, the first 48 hours matter most. Our emergency response team is trained to mobilize quickly, coordinating with local authorities to assess needs and deliver aid where it is needed most.',
+  //     'Our relief kits typically include emergency food, clean water, blankets, and hygiene supplies, tailored to the specific needs of the crisis at hand, whether flooding, fire, or displacement.',
+  //     'Beyond the immediate response, we stay engaged with affected communities through the recovery phase, helping connect families with longer-term support as they rebuild.',
+  //     'None of this would be possible without a dedicated network of volunteers and donors who allow us to respond the moment a crisis begins.',
+  //   ],
+  // },
 ];
 
 export const categories = ['All', 'Impact Stories', 'Education', 'Healthcare', 'Empowerment', 'Development', 'Community', 'Relief'];

@@ -40,7 +40,7 @@ export default function Blog({ onNavigate }: BlogProps) {
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div
               onClick={() => handleNav('blog-detail', featuredPost.slug)}
-              className="relative rounded-2xl overflow-hidden shadow-xl group cursor-pointer"
+              className="relative rounded-lg overflow-hidden shadow-xl group cursor-pointer"
             >
               <img
                 src={featuredPost.image}
@@ -95,7 +95,7 @@ export default function Blog({ onNavigate }: BlogProps) {
               <article
                 key={post.slug}
                 onClick={() => handleNav('blog-detail', post.slug)}
-                className="card group cursor-pointer"
+                className="card group cursor-pointer rounded-lg"
               >
                 <div className="relative h-48 overflow-hidden">
                   <img

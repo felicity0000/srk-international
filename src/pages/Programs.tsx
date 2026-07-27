@@ -1,4 +1,5 @@
 import { GraduationCap, Stethoscope, Home as HomeIcon, Droplets, BookOpen, Heart, CheckCircle2, Brain } from 'lucide-react';
+import images from '../assets/images';
 
 interface ProgramsProps {
   onNavigate: (page: string) => void;
@@ -9,7 +10,7 @@ const programs = [
     icon: GraduationCap,
     title: 'Education for All',
     color: 'blue',
-    image: 'https://images.pexels.com/photos/8617715/pexels-photo-8617715.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image:images.education_for_all,
     desc: 'We believe education is the most powerful tool for breaking the cycle of poverty. Our education initiatives provide quality learning opportunities to children who would otherwise be left behind.',
     features: [
       'Free primary and secondary education for underprivileged children',
@@ -24,7 +25,7 @@ const programs = [
     icon: Stethoscope,
     title: 'Healthcare Access',
     color: 'orange',
-    image: 'https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image:images.healthcare_access,
     desc: 'Access to healthcare is a fundamental human right. We bring essential medical services to remote and underserved communities through our healthcare programs.',
     features: [
       'Free monthly medical camps in rural areas',
@@ -39,7 +40,7 @@ const programs = [
     icon: Brain,
     title: 'Mental Health Support',
     color: 'green',
-    image: 'https://images.pexels.com/photos/6994913/pexels-photo-6994913.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: images.mental_health,
     desc: 'Mental health is central to our mission. We work to break the stigma around mental health and ensure that support is accessible to everyone in the communities we serve.',
     features: [
       'Free and confidential counseling services',
@@ -54,7 +55,7 @@ const programs = [
     icon: HomeIcon,
     title: 'Community Development',
     color: 'green',
-    image: 'https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: images.community_devt,
     desc: 'Sustainable communities are built from within. We empower families and communities with the tools, resources, and training they need to become self-reliant.',
     features: [
       'Vocational training and skill development programs',
@@ -66,25 +67,10 @@ const programs = [
     impact: '850+ families supported',
   },
   {
-    icon: Droplets,
-    title: 'Clean Water Initiative',
-    color: 'blue',
-    image: 'https://images.pexels.com/photos/2918361/pexels-photo-2918361.jpeg?auto=compress&cs=tinysrgb&w=800',
-    desc: 'Clean water is essential for health and dignity. We work to ensure communities have access to safe, sustainable water sources.',
-    features: [
-      'Installation of water purification systems',
-      'Borewell and water well construction',
-      'Water conservation and rainwater harvesting',
-      'Sanitation and hygiene education',
-      'Community water management training',
-    ],
-    impact: '40+ water projects completed',
-  },
-  {
     icon: BookOpen,
     title: 'Women Empowerment',
     color: 'orange',
-    image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: images.women_empowerment,
     desc: 'When women thrive, communities prosper. We invest in women through education, skills training, and economic empowerment programs.',
     features: [
       'Tailoring and handicraft training centers',
@@ -95,21 +81,21 @@ const programs = [
     ],
     impact: '1,500+ women empowered',
   },
-  {
-    icon: Heart,
-    title: 'Disaster Relief',
-    color: 'red',
-    image: 'https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=800',
-    desc: 'When disasters strike, we respond. Our emergency relief teams provide immediate assistance and long-term recovery support to affected communities.',
-    features: [
-      'Emergency food, water, and shelter distribution',
-      'Medical emergency response teams',
-      'Rebuilding and rehabilitation support',
-      'Trauma counseling and support services',
-      'Disaster preparedness training',
-    ],
-    impact: '10+ disaster response missions',
-  },
+  // {
+  //   icon: Heart,
+  //   title: 'Disaster Relief',
+  //   color: 'red',
+  //   image: 'https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=800',
+  //   desc: 'When disasters strike, we respond. Our emergency relief teams provide immediate assistance and long-term recovery support to affected communities.',
+  //   features: [
+  //     'Emergency food, water, and shelter distribution',
+  //     'Medical emergency response teams',
+  //     'Rebuilding and rehabilitation support',
+  //     'Trauma counseling and support services',
+  //     'Disaster preparedness training',
+  //   ],
+  //   impact: '10+ disaster response missions',
+  // },
 ];
 
 const colorMap: Record<string, { bg: string; text: string; border: string; light: string }> = {
@@ -145,7 +131,7 @@ export default function Programs({ onNavigate }: ProgramsProps) {
 
       {/* Programs List */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           {programs.map((program, i) => {
             const colors = colorMap[program.color];
             return (

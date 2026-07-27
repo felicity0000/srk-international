@@ -1,4 +1,5 @@
 import { Target, Eye, Heart, Users, Award, Globe2, ArrowRight, HandHeart, Sparkles, Trophy, CheckCircle2 } from 'lucide-react';
+import images from '../assets/images';
 
 interface AboutProps {
   onNavigate: (page: string) => void;
@@ -75,7 +76,7 @@ export default function About({ onNavigate }: AboutProps) {
             </div>
             <div className="relative">
               <img
-                src="https://images.pexels.com/photos/6994913/pexels-photo-6994913.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src={images.about_us}
                 alt="Our story"
                 className="rounded-2xl shadow-xl w-full h-100 object-cover"
               />

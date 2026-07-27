@@ -1,19 +1,14 @@
 import { useState } from 'react';
 import { X } from 'lucide-react';
+import images from '../assets/images';
 
 const galleryItems = [
-  { src: 'https://images.pexels.com/photos/8617715/pexels-photo-8617715.jpeg?auto=compress&cs=tinysrgb&w=800', title: 'Education Drive', category: 'Education' },
-  { src: 'https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&w=800', title: 'Medical Camp', category: 'Healthcare' },
-  { src: 'https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=800', title: 'Community Aid', category: 'Community' },
-  { src: 'https://images.pexels.com/photos/6994913/pexels-photo-6994913.jpeg?auto=compress&cs=tinysrgb&w=800', title: 'Volunteer Day', category: 'Community' },
-  { src: 'https://images.pexels.com/photos/2918361/pexels-photo-2918361.jpeg?auto=compress&cs=tinysrgb&w=800', title: 'Clean Water Project', category: 'Development' },
-  { src: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800', title: 'Women Training', category: 'Empowerment' },
-  { src: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=800', title: 'Scholarship Award', category: 'Education' },
-  { src: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=800', title: 'Team Building', category: 'Community' },
-  { src: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=800', title: 'Health Workshop', category: 'Healthcare' },
-  { src: 'https://images.pexels.com/photos/3777943/pexels-photo-3777943.jpeg?auto=compress&cs=tinysrgb&w=800', title: 'Relief Mission', category: 'Development' },
-  { src: 'https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg?auto=compress&cs=tinysrgb&w=800', title: 'School Opening', category: 'Education' },
-  { src: 'https://images.pexels.com/photos/4173251/pexels-photo-4173251.jpeg?auto=compress&cs=tinysrgb&w=800', title: 'Women Empowerment', category: 'Empowerment' },
+  { src: images.education, title: 'Education Drive', category: 'Education' },
+  { src: images.health_care, title: 'Medical Camp', category: 'Healthcare' },
+  { src: images.community_devt, title: 'Community Aid', category: 'Community' },
+  { src: images.volunteers, title: 'Volunteer Day', category: 'Community' },
+  { src: images.clean_water, title: 'Clean Water Project', category: 'Development' },
+  { src: images.women_empowerment, title: 'Women Training', category: 'Empowerment' },
 ];
 
 const categories = ['All', 'Education', 'Healthcare', 'Community', 'Development', 'Empowerment'];
