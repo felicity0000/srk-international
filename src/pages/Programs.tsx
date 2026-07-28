@@ -108,7 +108,7 @@ export default function Programs({ onNavigate }: ProgramsProps) {
     <div className="pt-20">
       <SEO
         title="Our Programs"
-        description="Our four core programs address the root causes of poverty and inequality: Education, Skilling Lab, Food for Life, and Health and Wellness."
+        description="Our four core programs address mental health issues: Education, Skilling Lab, Food for Life, and Health and Wellness."
         path="/programs"
       />
       {/* Hero */}
