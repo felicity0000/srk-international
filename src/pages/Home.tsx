@@ -124,7 +124,7 @@ export default function Home({ onNavigate }: HomeProps) {
             <p className="text-lg md:text-xl text-blue-100 mt-6 leading-relaxed max-w-2xl animate-fade-in-up">
               We’re dedicated to creating lasting change through education,
               health care, skilling and providing food security among Youths and
-              Young Women
+              Young Women.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-10 animate-fade-in-up">
               <button
