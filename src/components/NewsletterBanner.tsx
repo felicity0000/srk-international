@@ -31,7 +31,7 @@ export default function NewsletterBanner() {
             </p>
           </div>
 
-          <div className="w-full lg:w-auto lg:min-w-[420px]">
+          <div className="w-full lg:w-auto lg:min-w-105">
             {submitted ? (
               <div className="bg-white/10 border border-white/20 text-white rounded-lg p-4 flex items-center gap-2 animate-fade-in">
                 <CheckCircle2 size={20} className="text-srk-orange-light shrink-0" />
