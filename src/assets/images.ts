@@ -19,11 +19,11 @@ import food_for_life_1 from "./food-for-live-kadama-district-1.png";
 import food_for_life_2 from "./food-for-live-kadama-district-2.png";
 import food_for_life_3 from "./food-for-live-kadama-district-3.png";
 import food_for_life_4 from "./food-for-live-kadama-district-4.png";
-import vision_poster from "./S2.PNG";
-import mission_poster from "./S3.PNG";
-import compassion_poster from "./S4.PNG";
-import compassion_collage_poster from "./S5.PNG";
-import leadership_poster from "./S6.PNG";
+import vision_poster from "./S2.png";
+import mission_poster from "./S3.png";
+import compassion_poster from "./S4.png";
+import compassion_collage_poster from "./S5.png";
+import leadership_poster from "./S6.png";
 
 const images = {
     srk_logo,
