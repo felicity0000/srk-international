@@ -57,7 +57,7 @@ export default function About({ onNavigate }: AboutProps) {
             Who We Are
           </h1>
           <p className="text-blue-100 text-lg leading-relaxed">
-            SRK International Society is a non-profit organization committed to serving humanity through compassion-driven initiatives in education, healthcare, mental health, and community development.
+            education, food security, skilling and health access addressing root causes of poor mental healthnt.
           </p>
         </div>
       </section>

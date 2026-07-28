@@ -119,7 +119,7 @@ export default function Programs({ onNavigate }: ProgramsProps) {
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="text-srk-orange-light font-semibold text-sm uppercase tracking-wider">Our Programs</span>
           <h1 className="text-4xl md:text-5xl font-heading font-bold text-white mt-3 mb-6">
-            Creating Lasting Impact
+            Creating Lasting Impact of mental health issues
           </h1>
           <p className="text-blue-100 text-lg leading-relaxed">
             Our programs are designed to address the root causes of poverty and inequality, creating sustainable solutions that empower communities for generations to come.
