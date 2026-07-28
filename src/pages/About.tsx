@@ -57,7 +57,7 @@ export default function About({ onNavigate }: AboutProps) {
             Who We Are
           </h1>
           <p className="text-blue-100 text-lg leading-relaxed">
-            education, food security, skilling and health access addressing root causes of poor mental healthnt.
+            education, food security, skilling and health access addressing root causes of poor mental health.
           </p>
         </div>
       </section>
