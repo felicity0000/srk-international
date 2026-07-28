@@ -98,7 +98,7 @@ export default function Home({ onNavigate }: HomeProps) {
     <div>
       <SEO
         title="Home"
-        description="SRK International Society is a global NGO dedicated to creating lasting change through education, healthcare, mental health support, and sustainable community development."
+        description="SRK International Society is dedicated to creating lasting change through education, healthcare, mental health support, and sustainable community development."
         path="/"
       />
       {/* Hero Section */}
