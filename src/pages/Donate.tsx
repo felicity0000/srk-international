@@ -95,7 +95,6 @@ export default function Donate({}: DonateProps) {
             Your Donation Changes Lives
           </h1>
           <p className="text-blue-100 text-lg leading-relaxed">
-            Every contribution, in cash or in kind, goes directly to families and children across Kampala and Wakiso District.
           </p>
         </div>
       </section>

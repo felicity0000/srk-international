@@ -122,9 +122,9 @@ export default function Home({ onNavigate }: HomeProps) {
               </span>
             </h1>
             <p className="text-lg md:text-xl text-blue-100 mt-6 leading-relaxed max-w-2xl animate-fade-in-up">
-              SRK International Society is a global NGO dedicated to creating
-              lasting change through education, healthcare, mental health
-              support, and sustainable community development.
+              We’re dedicated to creating lasting change through education,
+              health care, skilling and providing food security among Youths and
+              Young Women
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-10 animate-fade-in-up">
               <button
@@ -205,7 +205,7 @@ export default function Home({ onNavigate }: HomeProps) {
                 deserves access to education, healthcare, mental health support,
                 and the opportunity to live with dignity. Our mission is to
                 serve vulnerable communities with compassion and build
-                sustainable pathways out of poverty.
+                sustainable pathways.
               </p>
               <p className="text-gray-600 leading-relaxed mb-8">
                 Through strategic partnerships, dedicated volunteers, and the
@@ -266,10 +266,9 @@ export default function Home({ onNavigate }: HomeProps) {
               Mental Health Begins With Healthy Communities
             </h2>
             <p className="text-gray-600 leading-relaxed mb-8 max-w-2xl mx-auto">
-              We focus on 18-35-year-old youth and young women, going beyond
-              treating mental health as a purely medical issue. Through early
-              intervention and long-term, community-rooted support, we create
-              lasting change, not just short-term relief.
+              Through early intervention and community-rooted support, we create
+              lasting change for youths and young women aged 18–35 by addressing
+              mental health as a community issue more than just a medical one.
             </p>
             <button
               onClick={() => handleNav("about")}
@@ -294,7 +293,10 @@ export default function Home({ onNavigate }: HomeProps) {
               impact in communities around the world.
             </p>
           </Reveal>
-          <Reveal delay={0.1} className="grid md:grid-cols-2 lg:grid-cols-4 gap-2">
+          <Reveal
+            delay={0.1}
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-2"
+          >
             {programs.map((program, i) => {
               const accent = accentColors[i % accentColors.length];
               return (
