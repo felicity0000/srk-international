@@ -1,12 +1,15 @@
+import { useParams } from 'react-router-dom';
 import { Calendar, User, ArrowLeft, Share2, Link2, Mail } from 'lucide-react';
 import { featuredPost, posts } from '../data/blog';
+import SEO from '../components/SEO';
+import Reveal from '../components/Reveal';
 
 interface BlogDetailProps {
-  slug: string | null;
   onNavigate: (page: string, slug?: string) => void;
 }
 
-export default function BlogDetail({ slug, onNavigate }: BlogDetailProps) {
+export default function BlogDetail({ onNavigate }: BlogDetailProps) {
+  const { slug } = useParams<{ slug: string }>();
   const allPosts = [featuredPost, ...posts];
   const post = allPosts.find((p) => p.slug === slug);
 
@@ -33,6 +36,13 @@ export default function BlogDetail({ slug, onNavigate }: BlogDetailProps) {
 
   return (
     <div className="pt-20">
+      <SEO
+        title={post.title}
+        description={post.excerpt}
+        path={`/blog/${post.slug}`}
+        image={post.image}
+        type="article"
+      />
       {/* Hero */}
       <section className="relative h-105 overflow-hidden">
         <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
@@ -61,7 +71,7 @@ export default function BlogDetail({ slug, onNavigate }: BlogDetailProps) {
 
       {/* Content */}
       <section className="py-16 bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Reveal className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-lg text-gray-600 leading-relaxed mb-6 font-medium">{post.excerpt}</p>
           {post.content.map((para, i) => (
             <p key={i} className="text-gray-600 leading-relaxed mb-5">
@@ -89,7 +99,7 @@ export default function BlogDetail({ slug, onNavigate }: BlogDetailProps) {
               <Share2 size={16} />
             </button>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Related Posts */}
@@ -98,9 +108,9 @@ export default function BlogDetail({ slug, onNavigate }: BlogDetailProps) {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="section-title mb-10">More Stories</h2>
             <div className="grid md:grid-cols-3 gap-8">
-              {relatedPosts.map((p) => (
+              {relatedPosts.map((p, i) => (
+                <Reveal key={p.slug} delay={(i % 3) * 0.08}>
                 <article
-                  key={p.slug}
                   onClick={() => handleNav('blog-detail', p.slug)}
                   className="card group cursor-pointer"
                 >
@@ -121,6 +131,7 @@ export default function BlogDetail({ slug, onNavigate }: BlogDetailProps) {
                     <p className="text-sm text-gray-500 leading-relaxed">{p.excerpt}</p>
                   </div>
                 </article>
+                </Reveal>
               ))}
             </div>
           </div>

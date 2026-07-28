@@ -1,17 +1,25 @@
 import { useState } from 'react';
 import { X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import images from '../assets/images';
+import SEO from '../components/SEO';
+import Reveal from '../components/Reveal';
 
 const galleryItems = [
-  { src: images.education, title: 'Education Drive', category: 'Education' },
-  { src: images.health_care, title: 'Medical Camp', category: 'Healthcare' },
-  { src: images.community_devt, title: 'Community Aid', category: 'Community' },
-  { src: images.volunteers, title: 'Volunteer Day', category: 'Community' },
-  { src: images.clean_water, title: 'Clean Water Project', category: 'Development' },
-  { src: images.women_empowerment, title: 'Women Training', category: 'Empowerment' },
+  { src: images.education, title: 'Education Drive', category: 'Education', poster: false },
+  { src: images.health_care, title: 'Medical Camp', category: 'Healthcare', poster: false },
+  { src: images.community_devt, title: 'Community Aid', category: 'Community', poster: false },
+  { src: images.volunteers, title: 'Volunteer Day', category: 'Community', poster: false },
+  { src: images.clean_water, title: 'Clean Water Project', category: 'Development', poster: false },
+  { src: images.women_empowerment, title: 'Women Training', category: 'Empowerment', poster: false },
+  { src: images.vision_poster, title: 'Our Vision', category: 'Awareness', poster: true },
+  { src: images.mission_poster, title: 'Our Mission', category: 'Awareness', poster: true },
+  { src: images.compassion_poster, title: 'Compassion Starts With Us', category: 'Community', poster: true },
+  { src: images.compassion_collage_poster, title: 'Compassion Starts With Us', category: 'Community', poster: true },
+  { src: images.leadership_poster, title: 'Leadership Begins With Character', category: 'Empowerment', poster: true },
 ];
 
-const categories = ['All', 'Education', 'Healthcare', 'Community', 'Development', 'Empowerment'];
+const categories = ['All', 'Education', 'Healthcare', 'Community', 'Development', 'Empowerment', 'Awareness'];
 
 export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -23,6 +31,11 @@ export default function Gallery() {
 
   return (
     <div className="pt-20">
+      <SEO
+        title="Gallery"
+        description="A glimpse into the lives SRK International Society has touched and the communities we've transformed together."
+        path="/gallery"
+      />
       {/* Hero */}
       <section className="gradient-hero py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -62,44 +75,59 @@ export default function Gallery() {
           {/* Grid */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredItems.map((item, i) => (
-              <div
+              <Reveal
                 key={i}
-                className="group relative rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer"
+                delay={(i % 6) * 0.06}
+                className={`group relative rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer ${
+                  item.poster ? 'bg-srk-blue-dark' : ''
+                }`}
                 onClick={() => setLightbox(item.src)}
               >
                 <img
                   src={item.src}
                   alt={item.title}
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                  className={`w-full h-64 group-hover:scale-110 transition-transform duration-500 ${
+                    item.poster ? 'object-contain' : 'object-cover'
+                  }`}
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-srk-blue-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                   <div className="text-srk-orange-light text-xs font-medium uppercase tracking-wider">{item.category}</div>
                   <div className="text-white font-heading font-bold">{item.title}</div>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
       {/* Lightbox */}
-      {lightbox && (
-        <div
-          className="fixed inset-0 z-100 bg-black/80 flex items-center justify-center p-4 animate-fade-in"
+      <AnimatePresence>
+        {lightbox && (
+        <motion.div
+          className="fixed inset-0 z-100 bg-black/80 flex items-center justify-center p-4"
           onClick={() => setLightbox(null)}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
         >
           <button className="absolute top-6 right-6 text-white hover:text-srk-orange transition-colors">
             <X size={32} />
           </button>
-          <img
+          <motion.img
             src={lightbox}
             alt="Gallery"
             className="max-w-full max-h-full rounded-2xl shadow-2xl"
             onClick={(e) => e.stopPropagation()}
+            initial={{ scale: 0.92, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.92, opacity: 0 }}
+            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
           />
-        </div>
-      )}
+        </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

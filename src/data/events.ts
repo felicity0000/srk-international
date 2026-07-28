@@ -19,15 +19,16 @@ export interface PastEvent {
   date: string;
   location: string;
   image: string;
+  gallery?: string[];
   impact: string;
   content: string[];
 }
 
 export const upcomingEvents: UpcomingEvent[] = [
   {
-    slug: 'annual-education-drive-2026',
-    title: 'Annual Education Drive 2026',
-    date: 'Feb 15, 2026',
+    slug: 'annual-education-drive-2027',
+    title: 'Annual Education Drive 2027',
+    date: 'Feb 20, 2027',
     time: '9:00 AM - 4:00 PM',
     location: 'Kampala, Uganda',
     desc: 'Join us for our annual education drive where we distribute school supplies, uniforms, and scholarships to 500+ underprivileged children.',
@@ -49,7 +50,7 @@ export const upcomingEvents: UpcomingEvent[] = [
   {
     slug: 'free-medical-camp',
     title: 'Free Medical Camp',
-    date: 'Mar 8, 2026',
+    date: 'Sep 12, 2026',
     time: '8:00 AM - 2:00 PM',
     location: 'Wakiso District, Uganda',
     desc: 'A comprehensive free medical camp providing general health checkups, eye care, and maternal health services to rural communities.',
@@ -71,7 +72,7 @@ export const upcomingEvents: UpcomingEvent[] = [
   {
     slug: 'clean-water-project-launch',
     title: 'Clean Water Project Launch',
-    date: 'Apr 22, 2026',
+    date: 'Nov 14, 2026',
     time: '10:00 AM - 12:00 PM',
     location: 'Wakiso District, Uganda',
     desc: 'Launch of our new clean water initiative, installing water purification systems in 5 villages to provide safe drinking water.',
@@ -84,7 +85,7 @@ export const upcomingEvents: UpcomingEvent[] = [
       'Launch ceremony with local leaders',
     ],
     content: [
-      'Clean water changes everything: health, education, and daily life. On World Water Day this April, we are launching a new initiative to install water purification systems in five villages across Wakiso District that currently rely on unsafe water sources.',
+      'Clean water changes everything: health, education, and daily life. This November, we are launching a new initiative to install water purification systems in five villages across Wakiso District that currently rely on unsafe water sources.',
       'The launch event will include the commissioning of the first purification system, training for community members on how to maintain the equipment, and hygiene and sanitation workshops led by our public health team.',
       'Local leaders and district officials will join us to mark the occasion, and we\'ll be sharing the rollout plan for the remaining four villages over the following months.',
       'We\'re looking for 30 volunteers to help with setup, community engagement, and workshop facilitation. If you have experience in engineering, public health, or community mobilization, we\'d love your support.',
@@ -93,56 +94,43 @@ export const upcomingEvents: UpcomingEvent[] = [
 ];
 
 export const pastEvents: PastEvent[] = [
-  // {
-  //   slug: 'winter-clothing-drive-2025',
-  //   title: 'Winter Clothing Drive 2025',
-  //   date: 'Dec 2025',
-  //   location: 'Kampala & Wakiso',
-  //   image: 'https://images.pexels.com/photos/6994913/pexels-photo-6994913.jpeg?auto=compress&cs=tinysrgb&w=1200',
-  //   impact: '5,000+ people received warm clothing',
-  //   content: [
-  //     'Throughout December 2025, SRK International Society ran a community-wide clothing drive across Kampala and Wakiso District, collecting and distributing warm clothing to families facing the cold rainy season.',
-  //     'With the help of over 80 volunteers and dozens of community drop-off points, we collected thousands of clothing items which were sorted, cleaned where needed, and distributed directly to families identified through our community partners.',
-  //     'In total, more than 5,000 people received warm clothing through this drive, including children at three local primary schools who received jackets in time for the new term.',
-  //   ],
-  // },
   {
-    slug: 'women-skills-training-graduation',
-    title: 'Women Skills Training Graduation',
-    date: 'Nov 2025',
-    location: 'Kampala, Uganda',
-    image: images.women_empowerment,
-    impact: '120 women graduated with new skills',
+    slug: 'food-for-life-kadama-2022',
+    title: 'Food for Life Campaign',
+    date: 'Jan 15, 2022',
+    location: 'Kadama, Uganda',
+    image: images.food_for_life_1,
+    gallery: [
+      images.food_for_life_1,
+      images.food_for_life_2,
+      images.food_for_life_3,
+      images.food_for_life_4,
+    ],
+    impact: 'Food and care packages delivered to children',
     content: [
-      'After six months of training in tailoring, hairdressing, and small business management, 120 women graduated from our Vocational Skills Training Program in a celebration held in Kampala.',
-      'The program is designed to give women practical, income-generating skills alongside basic business and financial literacy training, so graduates can start or grow their own small enterprises.',
-      'Several graduates have already begun trading, and a number have gone on to train other women in their communities, extending the program\'s impact well beyond the original cohort.',
+      'On January 15, 2022, SRK International Society held its Food for Life Campaign in Kadama District, guided by the belief that "feeding the hungry is not charity but our social responsibility."',
+      'Volunteers gathered children from the local community and distributed food and care packages directly to them, spending the day engaging with the families and getting to know the needs of the community.',
+      'The campaign reflects SRK International Society\'s ongoing commitment to addressing hunger and supporting vulnerable children in underserved districts across Uganda.',
     ],
   },
-  // {
-  //   slug: 'flood-relief-mission',
-  //   title: 'Flood Relief Mission',
-  //   date: 'Sep 2025',
-  //   location: 'Wakiso District, Uganda',
-  //   image: images.flood_relief,
-  //   impact: '2,000+ families received emergency aid',
-  //   content: [
-  //     'Heavy rains in September 2025 caused severe flooding across parts of Wakiso District, displacing families and damaging homes and property. SRK International Society mobilized an emergency relief response within 48 hours.',
-  //     'Our team distributed emergency food packages, clean water, blankets, and hygiene kits to more than 2,000 affected families, working closely with local authorities to reach the hardest-hit areas first.',
-  //     'Beyond the immediate relief, we supported early recovery efforts by helping several households repair essential structures and access temporary shelter.',
-  //   ],
-  // },
   {
-    slug: 'health-awareness-week',
-    title: 'Health Awareness Week',
-    date: 'Aug 2025',
-    location: 'Kampala, Uganda',
-    image: images.mental_health,
-    impact: '10,000+ people reached',
+    slug: 'tree-plantation-drive-2021',
+    title: 'Tree Plantation Drive 2021',
+    date: 'Nov 4-5, 2021',
+    location: 'Mukono & Mityana Districts, Uganda',
+    image: images.tree_plantation_1,
+    gallery: [
+      images.tree_plantation_1,
+      images.tree_plantation_2,
+      images.tree_plantation_3,
+      images.tree_plantation_4,
+    ],
+    impact: 'Trees planted across 4 communities',
     content: [
-      'Health Awareness Week brought free health talks, screenings, and community outreach events to neighborhoods across Kampala over the course of seven days.',
-      'Topics covered included maternal health, nutrition, hygiene, and prevention of common communicable diseases, delivered by volunteer health professionals and community health workers.',
-      'The week reached over 10,000 people through a mix of community gatherings, school visits, and radio outreach, and helped connect dozens of families to ongoing healthcare services.',
+      'On November 4-5, 2021, SRK International Society organized a two-day Tree Plantation Drive across communities in Namanve, Kojja, and Kisoga in Mukono District, as well as Ntengeru Sub-county in Mityana District.',
+      'Volunteers in SRK branded t-shirts worked alongside community members and local leaders, digging holes and planting saplings under the drive\'s message of environmental stewardship: save a tree, save a family.',
+      'The initiative aimed to encourage reforestation and raise awareness of the long-term environmental and community benefits of tree planting, with local leaders and officials joining volunteers on the ground at each site.',
+      'The drive reflects SRK International Society\'s commitment to environmental sustainability alongside its work in education, health, and community development.',
     ],
   },
 ];

@@ -113,9 +113,13 @@
   }
 }
 
-/* Smooth scroll offset for sticky nav */
-[id] {
-  scroll-margin-top: 80px;
+/* Hide scrollbar for the horizontal quick-jump pill nav */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 /* Custom scrollbar */

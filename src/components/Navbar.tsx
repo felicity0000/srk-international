@@ -80,7 +80,7 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
             <div className="relative group">
               <button
                 className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-1 ${
-                  ['volunteer', 'donate', 'blog', 'contact'].includes(currentPage)
+                  ['donate', 'blog', 'contact'].includes(currentPage)
                     ? 'bg-srk-blue text-white'
                     : scrolled || currentPage !== 'home'
                     ? 'text-gray-700 hover:text-srk-blue hover:bg-blue-50'

@@ -1,12 +1,15 @@
+import { useParams } from 'react-router-dom';
 import { Calendar, Clock, MapPin, Users, ArrowLeft, CheckCircle2, Heart } from 'lucide-react';
 import { upcomingEvents, pastEvents } from '../data/events';
+import SEO from '../components/SEO';
+import Reveal from '../components/Reveal';
 
 interface EventDetailProps {
-  slug: string | null;
   onNavigate: (page: string, slug?: string) => void;
 }
 
-export default function EventDetail({ slug, onNavigate }: EventDetailProps) {
+export default function EventDetail({ onNavigate }: EventDetailProps) {
+  const { slug } = useParams<{ slug: string }>();
   const upcoming = upcomingEvents.find((e) => e.slug === slug);
   const past = pastEvents.find((e) => e.slug === slug);
 
@@ -18,7 +21,7 @@ export default function EventDetail({ slug, onNavigate }: EventDetailProps) {
   if (!upcoming && !past) {
     return (
       <div className="pt-32 pb-20 text-center px-4">
-        <h1 className="text-2xl font-heading font-bold text-srk-blue-dark mb-4">Event Not Found</h1>
+        <h1 className="text-xl font-heading font-bold text-srk-blue-dark mb-4">Event Not Found</h1>
         <p className="text-gray-500 mb-6">This event may have been removed or the link is incorrect.</p>
         <button onClick={() => handleNav('events')} className="btn-primary inline-flex items-center gap-2">
           <ArrowLeft size={18} /> Back to Events
@@ -27,8 +30,17 @@ export default function EventDetail({ slug, onNavigate }: EventDetailProps) {
     );
   }
 
+  const event = (upcoming ?? past)!;
+
   return (
     <div className="pt-20">
+      <SEO
+        title={event.title}
+        description={upcoming ? upcoming.desc : past!.impact}
+        path={`/events/${event.slug}`}
+        image={event.image}
+        type="article"
+      />
       {/* Hero */}
       <section className="relative h-105 overflow-hidden">
         <img
@@ -65,7 +77,7 @@ export default function EventDetail({ slug, onNavigate }: EventDetailProps) {
       {/* Content */}
       <section className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-3 gap-12">
-          <div className="lg:col-span-2">
+          <Reveal className="lg:col-span-2">
             {upcoming ? (
               upcoming.content.map((para, i) => (
                 <p key={i} className="text-gray-600 leading-relaxed mb-5">
@@ -81,7 +93,7 @@ export default function EventDetail({ slug, onNavigate }: EventDetailProps) {
             )}
 
             {upcoming && (
-              <div className="bg-blue-50 rounded-2xl p-6 mt-8">
+              <div className="bg-blue-50 rounded-lg p-6 mt-8">
                 <h3 className="font-heading font-bold text-srk-blue-dark mb-4">Event Highlights</h3>
                 <ul className="space-y-3">
                   {upcoming.highlights.map((h, i) => (
@@ -95,7 +107,7 @@ export default function EventDetail({ slug, onNavigate }: EventDetailProps) {
             )}
 
             {past && (
-              <div className="bg-green-50 border border-green-100 rounded-2xl p-6 mt-8 flex items-center gap-3">
+              <div className="bg-green-50 border border-green-100 rounded-lg p-6 mt-8 flex items-center gap-3">
                 <Heart size={22} className="text-srk-green shrink-0" />
                 <div>
                   <div className="text-xs text-gray-500">Impact Achieved</div>
@@ -103,11 +115,28 @@ export default function EventDetail({ slug, onNavigate }: EventDetailProps) {
                 </div>
               </div>
             )}
-          </div>
+
+            {past && past.gallery && past.gallery.length > 0 && (
+              <div className="mt-10">
+                <h3 className="font-heading font-bold text-srk-blue-dark mb-4">Event Gallery</h3>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {past.gallery.map((img, i) => (
+                    <div key={i} className="rounded-lg overflow-hidden aspect-4/3">
+                      <img
+                        src={img}
+                        alt={`${past.title} photo ${i + 1}`}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </Reveal>
 
           {/* Sidebar */}
-          <div>
-            <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 sticky top-24 space-y-5">
+          <Reveal delay={0.1}>
+            <div className="bg-white rounded-lg shadow-xl border border-gray-100 p-6 sticky top-24 space-y-5">
               <div className="flex items-start gap-3">
                 <Calendar size={20} className="text-srk-orange shrink-0 mt-0.5" />
                 <div>
@@ -157,7 +186,7 @@ export default function EventDetail({ slug, onNavigate }: EventDetailProps) {
                 </button>
               )}
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
     </div>

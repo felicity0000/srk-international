@@ -1,5 +1,14 @@
-import { GraduationCap, Stethoscope, Home as HomeIcon, BookOpen, CheckCircle2, Brain } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import {
+  GraduationCap,
+  Stethoscope,
+  CheckCircle2,
+  Wrench,
+  UtensilsCrossed,
+} from 'lucide-react';
 import images from '../assets/images';
+import SEO from '../components/SEO';
+import Reveal from '../components/Reveal';
 
 interface ProgramsProps {
   onNavigate: (page: string) => void;
@@ -8,111 +17,100 @@ interface ProgramsProps {
 const programs = [
   {
     icon: GraduationCap,
-    title: 'Education for All',
-    color: 'blue',
-    image:images.education_for_all,
-    desc: 'We believe education is the most powerful tool for breaking the cycle of poverty. Our education initiatives provide quality learning opportunities to children who would otherwise be left behind.',
+    title: 'Education',
+    image: images.education_for_all,
+    desc: 'We believe education is the most powerful tool for breaking the cycle of poverty. Our initiatives provide school supplies and support to keep young people in school and on track toward a better future.',
     features: [
-      'Free primary and secondary education for underprivileged children',
-      'Scholarship programs for higher education',
-      'After-school tutoring and mentorship programs',
-      'Digital literacy and computer training centers',
-      'School supplies and uniform distribution drives',
+      'School supplies, uniforms, and stationery distribution drives',
+      'Scholarship support for children in need',
+      'Textbook and learning material provision',
+      'Partnerships with local schools to identify at-risk children',
     ],
     impact: '3,200+ children educated',
   },
   {
+    icon: Wrench,
+    title: 'Skilling Lab',
+    image: images.hope,
+    desc: 'We offer practical training to combat unemployment, equipping individuals with the skills they need to build sustainable livelihoods.',
+    features: [
+      'Vocational and technical skills training',
+      'Entrepreneurship and small business management workshops',
+      'Digital literacy and computer training',
+      'Job readiness and career guidance sessions',
+    ],
+    impact: '500+ trained in vocational skills',
+  },
+  {
+    icon: UtensilsCrossed,
+    title: 'Food for Life',
+    image: images.food_for_all,
+    desc: 'We implement community activities like Food for Life, promoting nourishment and support for vulnerable families, children, and communities facing food insecurity.',
+    features: [
+      'Regular food package distribution to vulnerable families',
+      'Community feeding campaigns and outreach events',
+      'Nutrition awareness and education',
+      'Partnerships with local volunteers to reach underserved districts',
+    ],
+    impact: '5,000+ meals distributed',
+  },
+  {
     icon: Stethoscope,
-    title: 'Healthcare Access',
-    color: 'orange',
-    image:images.healthcare_access,
-    desc: 'Access to healthcare is a fundamental human right. We bring essential medical services to remote and underserved communities through our healthcare programs.',
+    title: 'Health and Wellness',
+    image: images.health_care,
+    desc: 'We promote healthy living through awareness campaigns, wellness programs, mental health education, nutrition, and community health initiatives.',
     features: [
       'Free monthly medical camps in rural areas',
       'Maternal and child health programs',
-      'Health awareness and disease prevention workshops',
-      'Mobile clinics for remote communities',
-      'Partnerships with local hospitals for specialized care',
+      'Mental health awareness campaigns and confidential counseling',
+      'Mobile clinics reaching remote communities',
     ],
     impact: '25,000+ patients treated',
   },
-  {
-    icon: Brain,
-    title: 'Mental Health Support',
-    color: 'green',
-    image: images.mental_health,
-    desc: 'Mental health is central to our mission. We work to break the stigma around mental health and ensure that support is accessible to everyone in the communities we serve.',
-    features: [
-      'Free and confidential counseling services',
-      'Mental health awareness campaigns and workshops',
-      'Peer support groups and safe spaces',
-      'Training for community mental health facilitators',
-      'Stress management and coping skills programs',
-    ],
-    impact: '1,000+ individuals supported',
-  },
-  {
-    icon: HomeIcon,
-    title: 'Community Development',
-    color: 'green',
-    image: images.community_devt,
-    desc: 'Sustainable communities are built from within. We empower families and communities with the tools, resources, and training they need to become self-reliant.',
-    features: [
-      'Vocational training and skill development programs',
-      'Micro-finance and entrepreneurship support',
-      'Clean water and sanitation projects',
-      'Affordable housing assistance',
-      'Women empowerment and self-help groups',
-    ],
-    impact: '850+ families supported',
-  },
-  {
-    icon: BookOpen,
-    title: 'Women Empowerment',
-    color: 'orange',
-    image: images.women_empowerment,
-    desc: 'When women thrive, communities prosper. We invest in women through education, skills training, and economic empowerment programs.',
-    features: [
-      'Tailoring and handicraft training centers',
-      'Self-help group formation and micro-finance',
-      'Leadership and advocacy training',
-      'Legal aid and awareness programs',
-      'Health and nutrition workshops',
-    ],
-    impact: '1,500+ women empowered',
-  },
-  // {
-  //   icon: Heart,
-  //   title: 'Disaster Relief',
-  //   color: 'red',
-  //   image: 'https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=800',
-  //   desc: 'When disasters strike, we respond. Our emergency relief teams provide immediate assistance and long-term recovery support to affected communities.',
-  //   features: [
-  //     'Emergency food, water, and shelter distribution',
-  //     'Medical emergency response teams',
-  //     'Rebuilding and rehabilitation support',
-  //     'Trauma counseling and support services',
-  //     'Disaster preparedness training',
-  //   ],
-  //   impact: '10+ disaster response missions',
-  // },
 ];
 
-const colorMap: Record<string, { bg: string; text: string; border: string; light: string }> = {
-  blue: { bg: 'bg-blue-50', text: 'text-srk-blue', border: 'border-srk-blue', light: 'bg-srk-blue' },
-  orange: { bg: 'bg-orange-50', text: 'text-srk-orange', border: 'border-srk-orange', light: 'bg-srk-orange' },
-  green: { bg: 'bg-green-50', text: 'text-srk-green', border: 'border-srk-green', light: 'bg-srk-green' },
-  red: { bg: 'bg-red-50', text: 'text-srk-red', border: 'border-srk-red', light: 'bg-srk-red' },
-};
+const accentColors = [
+  { bg: 'bg-blue-50', text: 'text-srk-blue', light: 'bg-srk-blue' },
+  { bg: 'bg-orange-50', text: 'text-srk-orange', light: 'bg-srk-orange' },
+  { bg: 'bg-green-50', text: 'text-srk-green', light: 'bg-srk-green' },
+];
 
 export default function Programs({ onNavigate }: ProgramsProps) {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
+
   const handleNav = (page: string) => {
     onNavigate(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const scrollToProgram = (i: number) => {
+    sectionRefs.current[i]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const idx = Number((entry.target as HTMLElement).dataset.index);
+            setActiveIndex(idx);
+          }
+        });
+      },
+      { rootMargin: '-180px 0px -65% 0px', threshold: 0 }
+    );
+    sectionRefs.current.forEach((el) => el && observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="pt-20">
+      <SEO
+        title="Our Programs"
+        description="Our four core programs address the root causes of poverty and inequality: Education, Skilling Lab, Food for Life, and Health and Wellness."
+        path="/programs"
+      />
       {/* Hero */}
       <section className="gradient-hero py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -129,48 +127,102 @@ export default function Programs({ onNavigate }: ProgramsProps) {
         </div>
       </section>
 
+      {/* Mobile Quick Jump */}
+      <section className="bg-white border-b border-gray-100 py-4 sticky top-24 z-30 lg:hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="flex items-center gap-3 overflow-x-auto no-scrollbar">
+            {programs.map((program, i) => {
+              const accent = accentColors[i % accentColors.length];
+              return (
+                <button
+                  key={i}
+                  onClick={() => scrollToProgram(i)}
+                  className={`flex items-center gap-2 shrink-0 px-4 py-2 rounded-full border border-gray-200 ${accent.bg} ${accent.text} text-sm font-medium hover:border-transparent hover:shadow-md transition-all duration-200`}
+                >
+                  <program.icon size={16} />
+                  {program.title}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* Programs List */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-          {programs.map((program, i) => {
-            const colors = colorMap[program.color];
-            return (
-              <div
-                key={i}
-                className={`grid lg:grid-cols-2 gap-12 items-center ${i % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
-              >
-                <div className={i % 2 === 1 ? 'lg:order-2' : ''}>
-                  <div className="relative">
-                    <img
-                      src={program.image}
-                      alt={program.title}
-                      className="rounded-2xl shadow-xl w-full h-360px object-cover"
-                    />
-                    <div className={`absolute -bottom-5 ${i % 2 === 1 ? 'left-6' : 'right-6'} ${colors.light} text-white rounded-xl px-6 py-3 shadow-lg`}>
-                      <div className="text-sm font-medium">{program.impact}</div>
+      <section className="py-10 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 flex flex-col lg:flex-row gap-5 items-start">
+          {/* Fixed vertical nav */}
+          <aside className="hidden lg:block w-64 shrink-0 sticky top-32">
+            <div className="text-xs font-semibold uppercase tracking-wider text-gray-400 px-4 mb-3">
+              Jump to a program
+            </div>
+            <nav className="space-y-1">
+              {programs.map((program, i) => {
+                const accent = accentColors[i % accentColors.length];
+                const active = activeIndex === i;
+                return (
+                  <button
+                    key={i}
+                    onClick={() => scrollToProgram(i)}
+                    className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-left transition-all duration-200 ${
+                      active ? `${accent.light} text-white shadow-md` : 'text-gray-600 hover:bg-white hover:shadow-sm'
+                    }`}
+                  >
+                    <program.icon size={18} className={active ? 'text-white' : accent.text} />
+                    {program.title}
+                  </button>
+                );
+              })}
+            </nav>
+          </aside>
+
+          {/* Program cards */}
+          <div className="flex-1 min-w-0 space-y-3">
+            {programs.map((program, i) => {
+              const accent = accentColors[i % accentColors.length];
+              return (
+                <Reveal key={i}>
+                <div
+                  ref={(el) => {
+                    sectionRefs.current[i] = el;
+                  }}
+                  data-index={i}
+                  className="bg-white rounded-lg border border-gray-100 shadow-lg hover:shadow-xl transition-shadow duration-300 p-3 md:p-5 scroll-mt-20"
+                >
+                  <div className="grid md:grid-cols-2 gap-5 items-center">
+                    <div className="relative">
+                      <img
+                        src={program.image}
+                        alt={program.title}
+                        className="rounded-lg shadow-lg w-full h-64 md:h-72 object-cover"
+                      />
+                      <div className={`absolute -bottom-5 right-6 ${accent.light} text-white rounded-lg px-6 py-3 shadow-lg`}>
+                        <div className="text-sm font-medium">{program.impact}</div>
+                      </div>
+                    </div>
+                    <div>
+                      <div className={`inline-flex items-center justify-center w-10 h-10 ${accent.bg} rounded-xl mb-5`}>
+                        <program.icon className={accent.text} size={20} />
+                      </div>
+                      <h2 className="text-xl font-heading font-bold text-srk-blue-dark mb-4">
+                        {program.title}
+                      </h2>
+                      <p className="text-gray-600 leading-relaxed mb-6">{program.desc}</p>
+                      <ul className="space-y-3">
+                        {program.features.map((feature, j) => (
+                          <li key={j} className="flex items-start gap-3">
+                            <CheckCircle2 className={`${accent.text} shrink-0 mt-0.5`} size={20} />
+                            <span className="text-gray-600 text-sm">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </div>
-                <div className={i % 2 === 1 ? 'lg:order-1' : ''}>
-                  <div className={`inline-flex items-center justify-center w-14 h-14 ${colors.bg} rounded-xl mb-5`}>
-                    <program.icon className={colors.text} size={28} />
-                  </div>
-                  <h2 className="text-2xl md:text-3xl font-heading font-bold text-srk-blue-dark mb-4">
-                    {program.title}
-                  </h2>
-                  <p className="text-gray-600 leading-relaxed mb-6">{program.desc}</p>
-                  <ul className="space-y-3">
-                    {program.features.map((feature, j) => (
-                      <li key={j} className="flex items-start gap-3">
-                        <CheckCircle2 className={`${colors.text} shrink-0 mt-0.5`} size={20} />
-                        <span className="text-gray-600 text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            );
-          })}
+                </Reveal>
+              );
+            })}
+          </div>
         </div>
       </section>
 

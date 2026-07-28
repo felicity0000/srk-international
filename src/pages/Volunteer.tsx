@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Heart, Users, GraduationCap, Stethoscope, Home as HomeIcon, CheckCircle2, ArrowRight } from 'lucide-react';
 import images from '../assets/images';
+import SEO from '../components/SEO';
+import Reveal from '../components/Reveal';
 
 interface VolunteerProps {
   onNavigate: (page: string) => void;
@@ -39,6 +41,11 @@ export default function Volunteer({ onNavigate }: VolunteerProps) {
 
   return (
     <div className="pt-20">
+      <SEO
+        title="Volunteer With Us"
+        description="Join our community of volunteers and be the hands and hearts that create lasting impact through education, healthcare, and community outreach."
+        path="/volunteer"
+      />
       {/* Hero */}
       <section className="gradient-hero py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -59,7 +66,7 @@ export default function Volunteer({ onNavigate }: VolunteerProps) {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-            <div>
+            <Reveal>
               <span className="text-srk-orange font-semibold text-sm uppercase tracking-wider">Why Volunteer</span>
               <h2 className="section-title mt-3 mb-6">Make a Difference, Find Your Purpose</h2>
               <p className="text-gray-600 leading-relaxed mb-6">
@@ -78,20 +85,20 @@ export default function Volunteer({ onNavigate }: VolunteerProps) {
                   </li>
                 ))}
               </ul>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
+            </Reveal>
+            <Reveal delay={0.15} className="grid grid-cols-2 gap-4">
               <img src={images.volunteers} alt="Volunteers" className="rounded-2xl shadow-lg w-full h-48 object-cover" />
               <img src={images.women_empowerment} alt="Community work" className="rounded-2xl shadow-lg w-full h-48 object-cover mt-8" />
-            </div>
+            </Reveal>
           </div>
 
           {/* Opportunities */}
           <div className="mb-16">
-            <div className="text-center mb-10">
+            <Reveal className="text-center mb-10">
               <span className="text-srk-orange font-semibold text-sm uppercase tracking-wider">Opportunities</span>
               <h2 className="section-title mt-3">Volunteer Roles</h2>
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            </Reveal>
+            <Reveal delay={0.1} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {opportunities.map((opp, i) => {
                 const accent = accentColors[i % accentColors.length];
                 return (
@@ -105,11 +112,11 @@ export default function Volunteer({ onNavigate }: VolunteerProps) {
                   </div>
                 );
               })}
-            </div>
+            </Reveal>
           </div>
 
           {/* Form */}
-          <div className="max-w-2xl mx-auto bg-gray-50 rounded-2xl p-8 shadow-md">
+          <Reveal className="max-w-2xl mx-auto bg-gray-50 rounded-2xl p-8 shadow-md">
             <div className="text-center mb-8">
               <span className="text-srk-orange font-semibold text-sm uppercase tracking-wider">Sign Up</span>
               <h2 className="text-2xl font-heading font-bold text-srk-blue-dark mt-2">Volunteer Registration</h2>
@@ -214,7 +221,7 @@ export default function Volunteer({ onNavigate }: VolunteerProps) {
                 Submit Registration <ArrowRight size={18} />
               </button>
             </form>
-          </div>
+          </Reveal>
         </div>
       </section>
     </div>

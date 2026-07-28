@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle2, Clock, MessageSquare } from 'lucide-react';
+import SEO from '../components/SEO';
+import Reveal from '../components/Reveal';
 
 const contactInfo = [
   { icon: MapPin, title: 'Visit Us', value: 'SRK International Society, Kampala, Uganda', color: 'blue' },
@@ -27,6 +29,11 @@ export default function Contact() {
 
   return (
     <div className="pt-20">
+      <SEO
+        title="Contact Us"
+        description="Have a question, want to partner with us, or simply want to learn more? Get in touch with SRK International Society."
+        path="/contact"
+      />
       {/* Hero */}
       <section className="gradient-hero py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -46,7 +53,7 @@ export default function Contact() {
       {/* Contact Info Cards */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <Reveal className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((info, i) => {
               const colors = colorMap[info.color];
               return (
@@ -59,7 +66,7 @@ export default function Contact() {
                 </div>
               );
             })}
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -68,7 +75,7 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Form */}
-            <div className="bg-white rounded-2xl shadow-xl p-8">
+            <Reveal className="bg-white rounded-2xl shadow-xl p-8">
               <h2 className="text-2xl font-heading font-bold text-srk-blue-dark mb-2">Send Us a Message</h2>
               <p className="text-gray-500 text-sm mb-6">We'll get back to you within 24 hours.</p>
 
@@ -131,14 +138,14 @@ export default function Contact() {
                   Send Message <Send size={18} />
                 </button>
               </form>
-            </div>
+            </Reveal>
 
             {/* Map Placeholder */}
-            <div className="space-y-6">
+            <Reveal delay={0.15} className="space-y-6">
               <div className="bg-white rounded-2xl shadow-xl overflow-hidden h-80">
                 <iframe
                   title="SRK International Society Location"
-                  src="https://www.google.com/maps?q=Kampala,Uganda&output=embed"
+                  src="https://www.google.com/maps?q=0.3386159837245941,32.6229362487793&z=17&output=embed"
                   className="w-full h-full border-0"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
@@ -160,7 +167,7 @@ export default function Contact() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>

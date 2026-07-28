@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Calendar, Clock, ArrowRight, User } from 'lucide-react';
 import { featuredPost, posts, categories } from '../data/blog';
+import SEO from '../components/SEO';
+import Reveal from '../components/Reveal';
 
 interface BlogProps {
   onNavigate: (page: string, slug?: string) => void;
@@ -18,6 +20,11 @@ export default function Blog({ onNavigate }: BlogProps) {
 
   return (
     <div className="pt-20">
+      <SEO
+        title="News & Blog"
+        description="Stay updated with SRK International Society's latest news, impact stories, and insights from the field."
+        path="/blog"
+      />
       {/* Hero */}
       <section className="gradient-hero py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -38,7 +45,7 @@ export default function Blog({ onNavigate }: BlogProps) {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-            <div
+            <Reveal
               onClick={() => handleNav('blog-detail', featuredPost.slug)}
               className="relative rounded-lg overflow-hidden shadow-xl group cursor-pointer"
             >
@@ -50,8 +57,8 @@ export default function Blog({ onNavigate }: BlogProps) {
               <div className="absolute top-4 left-4 bg-srk-orange text-white text-xs font-semibold px-3 py-1.5 rounded-full">
                 Featured
               </div>
-            </div>
-            <div>
+            </Reveal>
+            <Reveal delay={0.15}>
               <span className="inline-block text-srk-orange text-xs font-semibold uppercase tracking-wider bg-orange-50 px-3 py-1 rounded-full mb-4">
                 {featuredPost.category}
               </span>
@@ -69,7 +76,7 @@ export default function Blog({ onNavigate }: BlogProps) {
               >
                 Read More <ArrowRight size={18} />
               </button>
-            </div>
+            </Reveal>
           </div>
 
           {/* Category Filter */}
@@ -91,9 +98,9 @@ export default function Blog({ onNavigate }: BlogProps) {
 
           {/* Posts Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredPosts.map((post) => (
+            {filteredPosts.map((post, i) => (
+              <Reveal key={post.slug} delay={(i % 3) * 0.08}>
               <article
-                key={post.slug}
                 onClick={() => handleNav('blog-detail', post.slug)}
                 className="card group cursor-pointer rounded-lg"
               >
@@ -118,6 +125,7 @@ export default function Blog({ onNavigate }: BlogProps) {
                   </div>
                 </div>
               </article>
+              </Reveal>
             ))}
           </div>
         </div>
