@@ -1,11 +1,9 @@
 import {
   ArrowRight,
-  Heart,
-  Users,
-  GraduationCap,
-  Home as HomeIcon,
+  Heart,  GraduationCap,
+ 
   Stethoscope,
-  Globe2,
+
   Quote,
   Wrench,
   UtensilsCrossed,
@@ -18,12 +16,12 @@ interface HomeProps {
   onNavigate: (page: string) => void;
 }
 
-const stats = [
-  // { icon: Users, value: "15,000+", label: "Lives Impacted" },
-  // { icon: GraduationCap, value: "3,200", label: "Children Educated" },
-  // { icon: HomeIcon, value: "850", label: "Families Supported" },
-  // { icon: Globe2, value: "12", label: "Countries Reached" },
-];
+// const stats = [
+//   { icon: Users, value: "15,000+", label: "Lives Impacted" },
+//   { icon: GraduationCap, value: "3,200", label: "Children Educated" },
+//   { icon: HomeIcon, value: "850", label: "Families Supported" },
+//   { icon: Globe2, value: "12", label: "Countries Reached" },
+// ];
 
 const programs = [
   {
@@ -160,7 +158,7 @@ export default function Home({ onNavigate }: HomeProps) {
       {/* Stats Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Reveal className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          {/** <Reveal className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, i) => {
               const accent = accentColors[i % accentColors.length];
               return (
@@ -185,7 +183,7 @@ export default function Home({ onNavigate }: HomeProps) {
                 </div>
               );
             })}
-          </Reveal>
+          </Reveal> **/}
         </div>
       </section>
 
