@@ -19,10 +19,10 @@ interface HomeProps {
 }
 
 const stats = [
-  { icon: Users, value: "15,000+", label: "Lives Impacted" },
-  { icon: GraduationCap, value: "3,200", label: "Children Educated" },
-  { icon: HomeIcon, value: "850", label: "Families Supported" },
-  { icon: Globe2, value: "12", label: "Countries Reached" },
+  // { icon: Users, value: "15,000+", label: "Lives Impacted" },
+  // { icon: GraduationCap, value: "3,200", label: "Children Educated" },
+  // { icon: HomeIcon, value: "850", label: "Families Supported" },
+  // { icon: Globe2, value: "12", label: "Countries Reached" },
 ];
 
 const programs = [
