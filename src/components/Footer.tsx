@@ -1,6 +1,6 @@
 import { Heart, Mail, Phone, MapPin,  } from 'lucide-react';
 import images from '../assets/images';
-import { InstagramIcon, LinkedinIcon } from './SocialIcons';
+import { InstagramIcon, LinkedinIcon, TiktokIcon } from './SocialIcons';
 
 interface FooterProps {
   onNavigate: (page: string) => void;
@@ -53,6 +53,15 @@ export default function Footer({ onNavigate }: FooterProps) {
                 className="bg-white/10 hover:bg-srk-orange p-2.5 rounded-lg transition-all duration-300 hover:scale-110"
               >
                 <LinkedinIcon className="w-4.5 h-4.5 text-white" />
+              </a>
+              <a
+                href="https://www.tiktok.com/@srkinternationalsociety?_r=1&_t=ZS-986tj7aykGm"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow us on TikTok"
+                className="bg-white/10 hover:bg-srk-orange p-2.5 rounded-lg transition-all duration-300 hover:scale-110"
+              >
+                <TiktokIcon className="w-4.5 h-4.5 text-white" />
               </a>
             </div>
           </div>
