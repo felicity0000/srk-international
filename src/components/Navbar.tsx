@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import images from '../assets/images';
 
@@ -48,16 +49,19 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24 sm:h-28">
           {/* Logo */}
-          <button
+          <motion.button
             onClick={() => handleNav('home')}
             className="flex items-center gap-3 group"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ duration: 0.2 }}
           >
             <img
               src={images.srk_logo}
               alt="SRK International Society"
               className="h-10 sm:h-14 w-auto object-contain rounded-lg"
             />
-          </button>
+          </motion.button>
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-1">
@@ -108,12 +112,15 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
           </div>
 
           {/* CTA Button */}
-          <button
+          <motion.button
             onClick={() => handleNav('donate')}
-            className="hidden lg:block bg-srk-orange hover:bg-srk-orange-light text-white font-semibold text-sm px-5 py-2.5 rounded-lg transition-all duration-300 hover:shadow-lg hover:scale-105"
+            className="hidden lg:block bg-srk-orange hover:bg-srk-orange-light text-white font-semibold text-sm px-5 py-2.5 rounded-lg transition-colors duration-300 hover:shadow-lg"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.96 }}
+            transition={{ duration: 0.2 }}
           >
             Donate Now
-          </button>
+          </motion.button>
 
           {/* Mobile Menu Button */}
           <button
@@ -129,33 +136,45 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
         </div>
 
         {/* Mobile Menu */}
-        <div
-          className={`lg:hidden transition-all duration-300 overflow-hidden ${
-            mobileOpen ? 'max-h-screen pb-4' : 'max-h-0'
-          }`}
-        >
-          <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-4 mt-2">
-            {navLinks.map((link) => (
-              <button
-                key={link.page}
-                onClick={() => handleNav(link.page)}
-                className={`w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-all duration-150 ${
-                  currentPage === link.page
-                    ? 'bg-srk-blue text-white'
-                    : 'text-gray-700 hover:bg-blue-50 hover:text-srk-blue'
-                }`}
-              >
-                {link.label}
-              </button>
-            ))}
-            <button
-              onClick={() => handleNav('donate')}
-              className="w-full mt-3 bg-srk-orange text-white font-semibold py-3 rounded-lg text-sm hover:bg-srk-orange-light transition-colors"
+        <AnimatePresence initial={false}>
+          {mobileOpen && (
+            <motion.div
+              className="lg:hidden overflow-hidden"
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             >
-              Donate Now
-            </button>
-          </div>
-        </div>
+              <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-4 mt-2 mb-4">
+                {navLinks.map((link, i) => (
+                  <motion.button
+                    key={link.page}
+                    onClick={() => handleNav(link.page)}
+                    initial={{ opacity: 0, x: -12 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.25, delay: i * 0.04, ease: [0.22, 1, 0.36, 1] }}
+                    className={`w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-colors duration-150 ${
+                      currentPage === link.page
+                        ? 'bg-srk-blue text-white'
+                        : 'text-gray-700 hover:bg-blue-50 hover:text-srk-blue'
+                    }`}
+                  >
+                    {link.label}
+                  </motion.button>
+                ))}
+                <motion.button
+                  onClick={() => handleNav('donate')}
+                  initial={{ opacity: 0, x: -12 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.25, delay: navLinks.length * 0.04, ease: [0.22, 1, 0.36, 1] }}
+                  className="w-full mt-3 bg-srk-orange text-white font-semibold py-3 rounded-lg text-sm hover:bg-srk-orange-light transition-colors"
+                >
+                  Donate Now
+                </motion.button>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
     </header>
   );
