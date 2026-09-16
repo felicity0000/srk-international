@@ -30,7 +30,7 @@ export default function Footer({ onNavigate }: FooterProps) {
             </p>
             <div className="flex gap-3 mt-6">
               <a
-                href="mailto:info@srkinternational.org"
+                href="mailto:info@srkinternationalsociety.org"
                 aria-label="Email us"
                 className="bg-white/10 hover:bg-srk-orange p-2.5 rounded-lg transition-all duration-300 hover:scale-110"
               >
@@ -121,11 +121,11 @@ export default function Footer({ onNavigate }: FooterProps) {
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-srk-orange-light shrink-0" />
-                <span>+256 700 123 456</span>
+                <span>+256 756 243447</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={18} className="text-srk-orange-light shrink-0" />
-                <span>info@srkinternational.org</span>
+                <span>info@srkinternationalsociety.org</span>
               </li>
             </ul>
           </div>

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.srkinternational.org/sitemap.xml
+Sitemap: https://srkinternationalsociety.org/sitemap.xml

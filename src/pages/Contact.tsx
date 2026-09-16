@@ -6,7 +6,7 @@ import Reveal from '../components/Reveal';
 const contactInfo = [
   { icon: MapPin, title: 'Visit Us', value: 'SRK International Society, Kampala, Uganda', color: 'blue' },
   { icon: Phone, title: 'Call Us', value: '+256 756 243447', color: 'orange' },
-  { icon: Mail, title: 'Email Us', value: 'info@srkinternational.org', color: 'green' },
+  { icon: Mail, title: 'Email Us', value: 'info@srkinternationalsociety.org', color: 'green' },
   { icon: Clock, title: 'Office Hours', value: 'Mon - Sat: 9:00 AM - 6:00 PM', color: 'blue' },
 ];
 
@@ -159,7 +159,7 @@ export default function Contact() {
                 <div className="space-y-3 text-sm">
                   <div className="flex items-center gap-3">
                     <Mail size={18} className="text-srk-orange-light" />
-                    <span>partnerships@srkinternational.org</span>
+                    <span>partnerships@srkinternationalsociety.org</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Phone size={18} className="text-srk-orange-light" />

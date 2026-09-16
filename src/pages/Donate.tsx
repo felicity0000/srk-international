@@ -178,7 +178,7 @@ export default function Donate({}: DonateProps) {
             <Shield className="text-srk-blue shrink-0 mt-0.5" size={26} />
             <p className="text-sm text-gray-600 leading-relaxed">
               After sending your donation, please email a screenshot of the transaction to{' '}
-              <span className="font-semibold text-srk-blue-dark">donations@srkinternational.org</span> or call{' '}
+              <span className="font-semibold text-srk-blue-dark">donations@srkinternationalsociety.org</span> or call{' '}
               <span className="font-semibold text-srk-blue-dark">+256 700 123 456</span> so we can confirm receipt and send you a thank-you note.
             </p>
           </Reveal>

@@ -9,7 +9,7 @@ interface SEOProps {
 }
 
 const SITE_NAME = 'SRK International Society';
-const SITE_URL = 'https://www.srkinternational.org';
+const SITE_URL = 'https://srkinternationalsociety.org';
 const DEFAULT_IMAGE = `${SITE_URL}/srk-logo-official.jpeg`;
 
 function upsertMeta(attr: 'name' | 'property', key: string, content: string) {
