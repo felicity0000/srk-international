@@ -159,11 +159,11 @@ export default function Contact() {
                 <div className="space-y-3 text-sm">
                   <div className="flex items-center gap-3">
                     <Mail size={18} className="text-srk-orange-light" />
-                    <span>partnerships@srkinternationalsociety.org</span>
+                    <span>info@srkinternationalsociety.org</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Phone size={18} className="text-srk-orange-light" />
-                    <span>+256 700 123 456</span>
+                    <span>+256 756 243447</span>
                   </div>
                 </div>
               </div>
