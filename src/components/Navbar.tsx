@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import images from '../assets/images';
 
 interface NavbarProps {
@@ -15,7 +15,6 @@ const navLinks = [
   { label: 'Events', page: 'events' },
   { label: 'Gallery', page: 'gallery' },
   { label: 'Volunteer', page: 'volunteer' },
-  { label: 'Donate', page: 'donate' },
   { label: 'News & Blog', page: 'blog' },
   { label: 'Contact', page: 'contact' },
 ];
@@ -65,11 +64,11 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-1">
-            {navLinks.slice(0, 6).map((link) => (
+            {navLinks.map((link) => (
               <button
                 key={link.page}
                 onClick={() => handleNav(link.page)}
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                className={`px-2.5 xl:px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-all duration-200 ${
                   currentPage === link.page
                     ? 'bg-srk-blue text-white'
                     : scrolled || currentPage !== 'home'
@@ -80,35 +79,6 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
                 {link.label}
               </button>
             ))}
-            {/* More dropdown */}
-            <div className="relative group">
-              <button
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-1 ${
-                  ['donate', 'blog', 'contact'].includes(currentPage)
-                    ? 'bg-srk-blue text-white'
-                    : scrolled || currentPage !== 'home'
-                    ? 'text-gray-700 hover:text-srk-blue hover:bg-blue-50'
-                    : 'text-white hover:text-srk-yellow hover:bg-white/10'
-                }`}
-              >
-                More <ChevronDown size={14} />
-              </button>
-              <div className="absolute right-0 mt-1 w-44 bg-white rounded-xl shadow-xl border border-gray-100 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-0 translate-y-2">
-                {navLinks.slice(6).map((link) => (
-                  <button
-                    key={link.page}
-                    onClick={() => handleNav(link.page)}
-                    className={`w-full text-left px-4 py-2 text-sm font-medium transition-colors duration-150 ${
-                      currentPage === link.page
-                        ? 'text-srk-blue bg-blue-50'
-                        : 'text-gray-700 hover:text-srk-blue hover:bg-blue-50'
-                    }`}
-                  >
-                    {link.label}
-                  </button>
-                ))}
-              </div>
-            </div>
           </div>
 
           {/* CTA Button */}

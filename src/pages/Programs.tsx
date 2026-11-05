@@ -31,7 +31,7 @@ const programs = [
   {
     icon: Wrench,
     title: 'Skilling Lab',
-    image: images.hope,
+    image: images.skilling_lab,
     desc: 'We offer practical training to combat unemployment, equipping individuals with the skills they need to build sustainable livelihoods.',
     features: [
       'Vocational and technical skills training',

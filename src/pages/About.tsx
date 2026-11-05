@@ -83,8 +83,8 @@ export default function About({ onNavigate }: AboutProps) {
             </Reveal>
             <Reveal delay={0.15} className="relative">
               <img
-                src={images.about_us}
-                alt="Our story"
+                src={images.mission_3}
+                alt="The SRK International Society team"
                 className="rounded-2xl shadow-xl w-full h-100 object-cover"
               />
               <div className="absolute -bottom-6 -right-6 bg-srk-orange text-white rounded-2xl px-8 py-6 shadow-2xl hidden md:block">

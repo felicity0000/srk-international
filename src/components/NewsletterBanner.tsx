@@ -46,13 +46,13 @@ export default function NewsletterBanner() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email address"
                   aria-label="Email address"
-                  className="w-full sm:flex-1 px-4 py-3 rounded-lg border border-white/20 bg-white/10 text-white placeholder-blue-200 focus:border-srk-orange-light focus:ring-2 focus:ring-srk-orange-light/30 outline-none transition-all"
+                  className="w-full sm:flex-1 px-3 py-2 text-sm rounded-lg border border-white/20 bg-white/10 text-white placeholder-blue-200 focus:border-srk-orange-light focus:ring-2 focus:ring-srk-orange-light/30 outline-none transition-all"
                 />
                 <button
                   type="submit"
-                  className="bg-srk-orange hover:bg-srk-orange-light text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center gap-2 shrink-0"
+                  className="bg-srk-orange hover:bg-srk-orange-light text-white text-sm font-semibold px-5 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center gap-2 shrink-0"
                 >
-                  Subscribe <Send size={18} />
+                  Subscribe <Send size={16} />
                 </button>
               </form>
             )}

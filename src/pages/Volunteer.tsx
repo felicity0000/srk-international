@@ -87,8 +87,10 @@ export default function Volunteer({ onNavigate }: VolunteerProps) {
               </ul>
             </Reveal>
             <Reveal delay={0.15} className="grid grid-cols-2 gap-4">
-              <img src={images.volunteers} alt="Volunteers" className="rounded-2xl shadow-lg w-full h-48 object-cover" />
-              <img src={images.women_empowerment} alt="Community work" className="rounded-2xl shadow-lg w-full h-48 object-cover mt-8" />
+              <img src={images.mission_3} alt="SRK volunteer team" className="rounded-2xl shadow-lg w-full h-48 object-cover" />
+              <img src={images.gallery_12} alt="Volunteer celebrating with children" className="rounded-2xl shadow-lg w-full h-48 object-cover mt-8" />
+              <img src={images.school_drive_4} alt="Volunteer preparing school supplies" className="rounded-2xl shadow-lg w-full h-48 object-cover" />
+              <img src={images.gallery_10} alt="Volunteer with children" className="rounded-2xl shadow-lg w-full h-48 object-cover mt-8" />
             </Reveal>
           </div>
 
@@ -137,50 +139,50 @@ export default function Volunteer({ onNavigate }: VolunteerProps) {
                 </button>
               </div>
             )}
-            <form onSubmit={handleSubmit} className="space-y-5">
-              <div className="grid sm:grid-cols-2 gap-5">
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">Full Name *</label>
+                  <label className="block text-xs font-medium text-gray-700 mb-1">Full Name *</label>
                   <input
                     type="text"
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:border-srk-blue focus:ring-2 focus:ring-blue-100 outline-none transition-all"
+                    className="w-full px-3 py-2 text-sm rounded-lg border border-gray-200 focus:border-srk-blue focus:ring-2 focus:ring-blue-100 outline-none transition-all"
                     placeholder="Your name"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">Email *</label>
+                  <label className="block text-xs font-medium text-gray-700 mb-1">Email *</label>
                   <input
                     type="email"
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:border-srk-blue focus:ring-2 focus:ring-blue-100 outline-none transition-all"
+                    className="w-full px-3 py-2 text-sm rounded-lg border border-gray-200 focus:border-srk-blue focus:ring-2 focus:ring-blue-100 outline-none transition-all"
                     placeholder="you@example.com"
                   />
                 </div>
               </div>
-              <div className="grid sm:grid-cols-2 gap-5">
+              <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">Phone *</label>
+                  <label className="block text-xs font-medium text-gray-700 mb-1">Phone *</label>
                   <input
                     type="tel"
                     required
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:border-srk-blue focus:ring-2 focus:ring-blue-100 outline-none transition-all"
+                    className="w-full px-3 py-2 text-sm rounded-lg border border-gray-200 focus:border-srk-blue focus:ring-2 focus:ring-blue-100 outline-none transition-all"
                     placeholder="+256 700 123 456"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">Area of Interest *</label>
+                  <label className="block text-xs font-medium text-gray-700 mb-1">Area of Interest *</label>
                   <select
                     required
                     value={formData.area}
                     onChange={(e) => setFormData({ ...formData, area: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:border-srk-blue focus:ring-2 focus:ring-blue-100 outline-none transition-all bg-white"
+                    className="w-full px-3 py-2 text-sm rounded-lg border border-gray-200 focus:border-srk-blue focus:ring-2 focus:ring-blue-100 outline-none transition-all bg-white"
                   >
                     <option value="">Select an area</option>
                     <option>Education Volunteer</option>
@@ -191,11 +193,11 @@ export default function Volunteer({ onNavigate }: VolunteerProps) {
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1.5">Availability</label>
+                <label className="block text-xs font-medium text-gray-700 mb-1">Availability</label>
                 <select
                   value={formData.availability}
                   onChange={(e) => setFormData({ ...formData, availability: e.target.value })}
-                  className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:border-srk-blue focus:ring-2 focus:ring-blue-100 outline-none transition-all bg-white"
+                  className="w-full px-3 py-2 text-sm rounded-lg border border-gray-200 focus:border-srk-blue focus:ring-2 focus:ring-blue-100 outline-none transition-all bg-white"
                 >
                   <option value="">Select availability</option>
                   <option>Weekdays</option>
@@ -205,20 +207,20 @@ export default function Volunteer({ onNavigate }: VolunteerProps) {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1.5">Message</label>
+                <label className="block text-xs font-medium text-gray-700 mb-1">Message</label>
                 <textarea
-                  rows={4}
+                  rows={3}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:border-srk-blue focus:ring-2 focus:ring-blue-100 outline-none transition-all resize-none"
+                  className="w-full px-3 py-2 text-sm rounded-lg border border-gray-200 focus:border-srk-blue focus:ring-2 focus:ring-blue-100 outline-none transition-all resize-none"
                   placeholder="Tell us about yourself and why you'd like to volunteer..."
                 />
               </div>
               <button
                 type="submit"
-                className="w-full bg-srk-orange hover:bg-srk-orange-light text-white font-semibold py-3.5 rounded-lg transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg flex items-center justify-center gap-2"
+                className="w-full bg-srk-orange hover:bg-srk-orange-light text-white text-sm font-semibold py-2.5 rounded-lg transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg flex items-center justify-center gap-2"
               >
-                Submit Registration <ArrowRight size={18} />
+                Submit Registration <ArrowRight size={16} />
               </button>
             </form>
           </Reveal>

@@ -3,6 +3,7 @@ import { Calendar, User, ArrowLeft, Share2, Link2, Mail } from 'lucide-react';
 import { featuredPost, posts } from '../data/blog';
 import SEO from '../components/SEO';
 import Reveal from '../components/Reveal';
+import images from '../assets/images';
 
 interface BlogDetailProps {
   onNavigate: (page: string, slug?: string) => void;
@@ -71,7 +72,8 @@ export default function BlogDetail({ onNavigate }: BlogDetailProps) {
 
       {/* Content */}
       <section className="py-16 bg-white">
-        <Reveal className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[minmax(0,1fr)_320px] gap-12">
+        <Reveal>
           <p className="text-lg text-gray-600 leading-relaxed mb-6 font-medium">{post.excerpt}</p>
           {post.content.map((para, i) => (
             <p key={i} className="text-gray-600 leading-relaxed mb-5">
@@ -100,6 +102,19 @@ export default function BlogDetail({ onNavigate }: BlogDetailProps) {
             </button>
           </div>
         </Reveal>
+
+        <aside className="lg:sticky lg:top-28 self-start">
+          <Reveal delay={0.1}>
+            <div className="card overflow-hidden">
+              <img
+                src={images.school_drive_poster}
+                alt="SRK International Society school drive poster"
+                className="w-full h-auto"
+              />
+            </div>
+          </Reveal>
+        </aside>
+        </div>
       </section>
 
       {/* Related Posts */}

@@ -86,56 +86,56 @@ export default function Contact() {
                 </div>
               )}
 
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">Full Name *</label>
+                  <label className="block text-xs font-medium text-gray-700 mb-1">Full Name *</label>
                   <input
                     type="text"
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:border-srk-blue focus:ring-2 focus:ring-blue-100 outline-none transition-all"
+                    className="w-full px-3 py-2 text-sm rounded-lg border border-gray-200 focus:border-srk-blue focus:ring-2 focus:ring-blue-100 outline-none transition-all"
                     placeholder="Your name"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">Email *</label>
+                  <label className="block text-xs font-medium text-gray-700 mb-1">Email *</label>
                   <input
                     type="email"
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:border-srk-blue focus:ring-2 focus:ring-blue-100 outline-none transition-all"
+                    className="w-full px-3 py-2 text-sm rounded-lg border border-gray-200 focus:border-srk-blue focus:ring-2 focus:ring-blue-100 outline-none transition-all"
                     placeholder="you@example.com"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">Subject *</label>
+                  <label className="block text-xs font-medium text-gray-700 mb-1">Subject *</label>
                   <input
                     type="text"
                     required
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:border-srk-blue focus:ring-2 focus:ring-blue-100 outline-none transition-all"
+                    className="w-full px-3 py-2 text-sm rounded-lg border border-gray-200 focus:border-srk-blue focus:ring-2 focus:ring-blue-100 outline-none transition-all"
                     placeholder="How can we help?"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">Message *</label>
+                  <label className="block text-xs font-medium text-gray-700 mb-1">Message *</label>
                   <textarea
-                    rows={5}
+                    rows={4}
                     required
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:border-srk-blue focus:ring-2 focus:ring-blue-100 outline-none transition-all resize-none"
+                    className="w-full px-3 py-2 text-sm rounded-lg border border-gray-200 focus:border-srk-blue focus:ring-2 focus:ring-blue-100 outline-none transition-all resize-none"
                     placeholder="Your message..."
                   />
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-srk-orange hover:bg-srk-orange-light text-white font-semibold py-3.5 rounded-lg transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg flex items-center justify-center gap-2"
+                  className="w-full bg-srk-orange hover:bg-srk-orange-light text-white text-sm font-semibold py-2.5 rounded-lg transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg flex items-center justify-center gap-2"
                 >
-                  Send Message <Send size={18} />
+                  Send Message <Send size={16} />
                 </button>
               </form>
             </Reveal>

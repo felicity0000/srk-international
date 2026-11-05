@@ -44,7 +44,7 @@ export default function Blog({ onNavigate }: BlogProps) {
       {/* Featured Post */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          <div className={`grid lg:grid-cols-2 gap-12 items-center ${posts.length > 0 ? 'mb-16' : ''}`}>
             <Reveal
               onClick={() => handleNav('blog-detail', featuredPost.slug)}
               className="relative rounded-lg overflow-hidden shadow-xl group cursor-pointer"
@@ -79,6 +79,8 @@ export default function Blog({ onNavigate }: BlogProps) {
             </Reveal>
           </div>
 
+          {posts.length > 0 && (
+          <>
           {/* Category Filter */}
           <div className="flex flex-wrap gap-3 mb-12">
             {categories.map((cat, i) => (
@@ -128,6 +130,8 @@ export default function Blog({ onNavigate }: BlogProps) {
               </Reveal>
             ))}
           </div>
+          </>
+          )}
         </div>
       </section>
     </div>

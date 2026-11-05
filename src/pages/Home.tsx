@@ -34,7 +34,7 @@ const programs = [
     icon: Wrench,
     title: "Skilling Lab",
     desc: "We offer practical vocational and skills training to equip individuals with the tools to combat unemployment and build sustainable livelihoods.",
-    image: images.hope,
+    image: images.skilling_lab,
   },
   {
     icon: UtensilsCrossed,
@@ -221,26 +221,26 @@ export default function Home({ onNavigate }: HomeProps) {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4">
                   <img
-                    src={images.education}
-                    alt="Education program"
-                    className="rounded-2xl shadow-lg w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+                    src={images.school_drive_4}
+                    alt="School supplies and SRK gift bags ready for distribution"
+                    className="rounded-2xl shadow-lg w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-300"
                   />
                   <img
-                    src={images.community_devt}
-                    alt="Community development"
-                    className="rounded-2xl shadow-lg w-full h-32 object-cover hover:scale-105 transition-transform duration-300"
+                    src={images.mission_2}
+                    alt="Child holding an SRK gift bag with friends"
+                    className="rounded-2xl shadow-lg w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <div className="space-y-4 pt-8">
                   <img
-                    src={images.health_care}
-                    alt="Healthcare"
-                    className="rounded-2xl shadow-lg w-full h-32 object-cover hover:scale-105 transition-transform duration-300"
+                    src={images.mission_3}
+                    alt="The SRK International Society team"
+                    className="rounded-2xl shadow-lg w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-300"
                   />
                   <img
-                    src={images.volunteers}
-                    alt="Volunteers"
-                    className="rounded-2xl shadow-lg w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+                    src={images.gallery_19}
+                    alt="Community members gathered for an SRK event"
+                    className="rounded-2xl shadow-lg w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </div>
               </div>

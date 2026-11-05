@@ -144,7 +144,7 @@ export default function EventDetail({ onNavigate }: EventDetailProps) {
                   <div className="text-sm font-medium text-gray-700">{(upcoming ?? past)!.date}</div>
                 </div>
               </div>
-              {upcoming && (
+              {upcoming?.time && (
                 <div className="flex items-start gap-3">
                   <Clock size={20} className="text-srk-orange shrink-0 mt-0.5" />
                   <div>
@@ -160,7 +160,7 @@ export default function EventDetail({ onNavigate }: EventDetailProps) {
                   <div className="text-sm font-medium text-gray-700">{(upcoming ?? past)!.location}</div>
                 </div>
               </div>
-              {upcoming && (
+              {upcoming?.spots && (
                 <div className="flex items-start gap-3">
                   <Users size={20} className="text-srk-orange shrink-0 mt-0.5" />
                   <div>

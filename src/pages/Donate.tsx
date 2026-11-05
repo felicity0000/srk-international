@@ -52,7 +52,7 @@ const paymentMethods = [
     name: 'MTN Mobile Money',
     subtitle: 'Send via MTN MoMo',
     fields: [
-      { label: 'MoMo Number', value: '0770 123 456' },
+      { label: 'MoMo Number', value: '0778299156' },
       { label: 'Registered Name', value: 'SRK International Society' },
     ],
   },
